@@ -1,0 +1,206 @@
+#9
+_program
+  #9
+  _class
+    Main
+    IO
+    "./test/atoi_test.cl"
+    (
+    #10
+    _method
+      newline
+      Object
+      #11
+      _dispatch
+        #11
+        _object
+          self
+        : _no_type
+        out_string
+        (
+        #11
+        _string
+          "\n"
+        : _no_type
+        )
+      : _no_type
+    #14
+    _method
+      prompt
+      String
+      #15
+      _block
+        #16
+        _dispatch
+          #16
+          _object
+            self
+          : _no_type
+          out_string
+          (
+          #16
+          _string
+            "Enter a number>"
+          : _no_type
+          )
+        : _no_type
+        #17
+        _dispatch
+          #17
+          _object
+            self
+          : _no_type
+          in_string
+          (
+          )
+        : _no_type
+      : _no_type
+    #21
+    _method
+      main
+      Object
+      #25
+      _let
+        z
+        A2I
+        #25
+        _new
+          A2I
+        : _no_type
+        #26
+        _loop
+          #26
+          _bool
+            1
+          : _no_type
+          #27
+          _let
+            s
+            String
+            #27
+            _dispatch
+              #27
+              _object
+                self
+              : _no_type
+              prompt
+              (
+              )
+            : _no_type
+            #28
+            _cond
+              #28
+              _eq
+                #28
+                _object
+                  s
+                : _no_type
+                #28
+                _string
+                  "stop"
+                : _no_type
+              : _no_type
+              #29
+              _dispatch
+                #29
+                _object
+                  self
+                : _no_type
+                abort
+                (
+                )
+              : _no_type
+              #31
+              _let
+                i
+                Int
+                #31
+                _dispatch
+                  #31
+                  _object
+                    z
+                  : _no_type
+                  a2i
+                  (
+                  #31
+                  _object
+                    s
+                  : _no_type
+                  )
+                : _no_type
+                #32
+                _let
+                  news
+                  String
+                  #32
+                  _dispatch
+                    #32
+                    _object
+                      z
+                    : _no_type
+                    i2a
+                    (
+                    #32
+                    _object
+                      i
+                    : _no_type
+                    )
+                  : _no_type
+                  #33
+                  _block
+                    #34
+                    _dispatch
+                      #34
+                      _object
+                        self
+                      : _no_type
+                      out_int
+                      (
+                      #34
+                      _object
+                        i
+                      : _no_type
+                      )
+                    : _no_type
+                    #35
+                    _dispatch
+                      #35
+                      _object
+                        self
+                      : _no_type
+                      newline
+                      (
+                      )
+                    : _no_type
+                    #36
+                    _dispatch
+                      #36
+                      _object
+                        self
+                      : _no_type
+                      out_string
+                      (
+                      #36
+                      _object
+                        news
+                      : _no_type
+                      )
+                    : _no_type
+                    #37
+                    _dispatch
+                      #37
+                      _object
+                        self
+                      : _no_type
+                      newline
+                      (
+                      )
+                    : _no_type
+                  : _no_type
+                : _no_type
+              : _no_type
+            : _no_type
+          : _no_type
+        : _no_type
+      : _no_type
+    )

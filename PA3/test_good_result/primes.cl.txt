@@ -1,0 +1,280 @@
+#27
+_program
+  #27
+  _class
+    Main
+    IO
+    "./tests/good/primes.cl"
+    (
+    #29
+    _method
+      main
+      Int
+      #30
+      _int
+        0
+      : Int
+    #33
+    _attr
+      out
+      Int
+      #34
+      _block
+        #35
+        _dispatch
+          #35
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #35
+          _string
+            "2 is trivially prime.\n"
+          : String
+          )
+        : SELF_TYPE
+        #36
+        _int
+          2
+        : Int
+      : Int
+    #39
+    _attr
+      testee
+      Int
+      #39
+      _object
+        out
+      : Int
+    #41
+    _attr
+      divisor
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #43
+    _attr
+      stop
+      Int
+      #43
+      _int
+        500
+      : Int
+    #45
+    _attr
+      m
+      Object
+      #46
+      _loop
+        #46
+        _bool
+          1
+        : Bool
+        #47
+        _block
+          #49
+          _assign
+            testee
+            #49
+            _plus
+              #49
+              _object
+                testee
+              : Int
+              #49
+              _int
+                1
+              : Int
+            : Int
+          : Int
+          #50
+          _assign
+            divisor
+            #50
+            _int
+              2
+            : Int
+          : Int
+          #52
+          _loop
+            #53
+            _cond
+              #53
+              _lt
+                #53
+                _object
+                  testee
+                : Int
+                #53
+                _mul
+                  #53
+                  _object
+                    divisor
+                  : Int
+                  #53
+                  _object
+                    divisor
+                  : Int
+                : Int
+              : Bool
+              #54
+              _bool
+                0
+              : Bool
+              #55
+              _cond
+                #55
+                _eq
+                  #55
+                  _sub
+                    #55
+                    _object
+                      testee
+                    : Int
+                    #55
+                    _mul
+                      #55
+                      _object
+                        divisor
+                      : Int
+                      #55
+                      _divide
+                        #55
+                        _object
+                          testee
+                        : Int
+                        #55
+                        _object
+                          divisor
+                        : Int
+                      : Int
+                    : Int
+                  : Int
+                  #55
+                  _int
+                    0
+                  : Int
+                : Bool
+                #56
+                _bool
+                  0
+                : Bool
+                #57
+                _bool
+                  1
+                : Bool
+              : Bool
+            : Bool
+            #60
+            _assign
+              divisor
+              #60
+              _plus
+                #60
+                _object
+                  divisor
+                : Int
+                #60
+                _int
+                  1
+                : Int
+              : Int
+            : Int
+          : Object
+          #63
+          _cond
+            #63
+            _lt
+              #63
+              _object
+                testee
+              : Int
+              #63
+              _mul
+                #63
+                _object
+                  divisor
+                : Int
+                #63
+                _object
+                  divisor
+                : Int
+              : Int
+            : Bool
+            #65
+            _block
+              #66
+              _assign
+                out
+                #66
+                _object
+                  testee
+                : Int
+              : Int
+              #67
+              _dispatch
+                #67
+                _object
+                  self
+                : SELF_TYPE
+                out_int
+                (
+                #67
+                _object
+                  out
+                : Int
+                )
+              : SELF_TYPE
+              #68
+              _dispatch
+                #68
+                _object
+                  self
+                : SELF_TYPE
+                out_string
+                (
+                #68
+                _string
+                  " is prime.\n"
+                : String
+                )
+              : SELF_TYPE
+            : SELF_TYPE
+            #71
+            _int
+              0
+            : Int
+          : Object
+          #74
+          _cond
+            #74
+            _leq
+              #74
+              _object
+                stop
+              : Int
+              #74
+              _object
+                testee
+              : Int
+            : Bool
+            #75
+            _dispatch
+              #75
+              _string
+                "halt"
+              : String
+              abort
+              (
+              )
+            : Object
+            #77
+            _string
+              "continue"
+            : String
+          : Object
+        : Object
+      : Object
+    )

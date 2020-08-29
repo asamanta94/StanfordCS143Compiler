@@ -1,0 +1,3 @@
+(* Hello comment *)
+*)
+-- Test comment --

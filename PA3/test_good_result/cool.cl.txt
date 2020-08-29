@@ -1,0 +1,97 @@
+#1
+_program
+  #1
+  _class
+    Main
+    IO
+    "./tests/good/cool.cl"
+    (
+    #2
+    _method
+      main
+      SELF_TYPE
+      #3
+      _block
+        #4
+        _dispatch
+          #4
+          _dispatch
+            #4
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #4
+            _dispatch
+              #4
+              _dispatch
+                #4
+                _new
+                  Object
+                : Object
+                type_name
+                (
+                )
+              : String
+              substr
+              (
+              #4
+              _int
+                4
+              : Int
+              #4
+              _int
+                1
+              : Int
+              )
+            : String
+            )
+          : SELF_TYPE
+          out_string
+          (
+          #5
+          _dispatch
+            #5
+            _dispatch
+              #5
+              _isvoid
+                #5
+                _object
+                  self
+                : SELF_TYPE
+              : Bool
+              type_name
+              (
+              )
+            : String
+            substr
+            (
+            #5
+            _int
+              1
+            : Int
+            #5
+            _int
+              3
+            : Int
+            )
+          : String
+          )
+        : SELF_TYPE
+        #6
+        _dispatch
+          #6
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #6
+          _string
+            "\n"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )

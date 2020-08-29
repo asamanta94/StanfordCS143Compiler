@@ -1,0 +1,178 @@
+#49
+_program
+  #49
+  _class
+    A
+    Object
+    "./tests/good/io.cl"
+    (
+    #53
+    _attr
+      io
+      IO
+      #53
+      _new
+        IO
+      : IO
+    #55
+    _method
+      out_a
+      Object
+      #55
+      _dispatch
+        #55
+        _object
+          io
+        : IO
+        out_string
+        (
+        #55
+        _string
+          "A: Hello world\n"
+        : String
+        )
+      : IO
+    )
+  #60
+  _class
+    B
+    A
+    "./tests/good/io.cl"
+    (
+    #64
+    _method
+      out_b
+      Object
+      #64
+      _dispatch
+        #64
+        _object
+          io
+        : IO
+        out_string
+        (
+        #64
+        _string
+          "B: Hello world\n"
+        : String
+        )
+      : IO
+    )
+  #69
+  _class
+    C
+    IO
+    "./tests/good/io.cl"
+    (
+    #73
+    _method
+      out_c
+      Object
+      #73
+      _dispatch
+        #73
+        _object
+          self
+        : SELF_TYPE
+        out_string
+        (
+        #73
+        _string
+          "C: Hello world\n"
+        : String
+        )
+      : SELF_TYPE
+    )
+  #80
+  _class
+    D
+    C
+    "./tests/good/io.cl"
+    (
+    #84
+    _method
+      out_d
+      Object
+      #84
+      _dispatch
+        #84
+        _object
+          self
+        : SELF_TYPE
+        out_string
+        (
+        #84
+        _string
+          "D: Hello world\n"
+        : String
+        )
+      : SELF_TYPE
+    )
+  #89
+  _class
+    Main
+    IO
+    "./tests/good/io.cl"
+    (
+    #93
+    _method
+      main
+      Object
+      #94
+      _block
+        #95
+        _dispatch
+          #95
+          _new
+            A
+          : A
+          out_a
+          (
+          )
+        : Object
+        #96
+        _dispatch
+          #96
+          _new
+            B
+          : B
+          out_b
+          (
+          )
+        : Object
+        #97
+        _dispatch
+          #97
+          _new
+            C
+          : C
+          out_c
+          (
+          )
+        : Object
+        #98
+        _dispatch
+          #98
+          _new
+            D
+          : D
+          out_d
+          (
+          )
+        : Object
+        #99
+        _dispatch
+          #99
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #99
+          _string
+            "Done.\n"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )

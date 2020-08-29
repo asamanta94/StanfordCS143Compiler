@@ -1,0 +1,178 @@
+#49
+_program
+  #49
+  _class
+    A
+    Object
+    "./test/io.cl"
+    (
+    #53
+    _attr
+      io
+      IO
+      #53
+      _new
+        IO
+      : _no_type
+    #55
+    _method
+      out_a
+      Object
+      #55
+      _dispatch
+        #55
+        _object
+          io
+        : _no_type
+        out_string
+        (
+        #55
+        _string
+          "A: Hello world\n"
+        : _no_type
+        )
+      : _no_type
+    )
+  #60
+  _class
+    B
+    A
+    "./test/io.cl"
+    (
+    #64
+    _method
+      out_b
+      Object
+      #64
+      _dispatch
+        #64
+        _object
+          io
+        : _no_type
+        out_string
+        (
+        #64
+        _string
+          "B: Hello world\n"
+        : _no_type
+        )
+      : _no_type
+    )
+  #69
+  _class
+    C
+    IO
+    "./test/io.cl"
+    (
+    #73
+    _method
+      out_c
+      Object
+      #73
+      _dispatch
+        #73
+        _object
+          self
+        : _no_type
+        out_string
+        (
+        #73
+        _string
+          "C: Hello world\n"
+        : _no_type
+        )
+      : _no_type
+    )
+  #80
+  _class
+    D
+    C
+    "./test/io.cl"
+    (
+    #84
+    _method
+      out_d
+      Object
+      #84
+      _dispatch
+        #84
+        _object
+          self
+        : _no_type
+        out_string
+        (
+        #84
+        _string
+          "D: Hello world\n"
+        : _no_type
+        )
+      : _no_type
+    )
+  #89
+  _class
+    Main
+    IO
+    "./test/io.cl"
+    (
+    #93
+    _method
+      main
+      Object
+      #94
+      _block
+        #95
+        _dispatch
+          #95
+          _new
+            A
+          : _no_type
+          out_a
+          (
+          )
+        : _no_type
+        #96
+        _dispatch
+          #96
+          _new
+            B
+          : _no_type
+          out_b
+          (
+          )
+        : _no_type
+        #97
+        _dispatch
+          #97
+          _new
+            C
+          : _no_type
+          out_c
+          (
+          )
+        : _no_type
+        #98
+        _dispatch
+          #98
+          _new
+            D
+          : _no_type
+          out_d
+          (
+          )
+        : _no_type
+        #99
+        _dispatch
+          #99
+          _object
+            self
+          : _no_type
+          out_string
+          (
+          #99
+          _string
+            "Done.\n"
+          : _no_type
+          )
+        : _no_type
+      : _no_type
+    )

@@ -1,0 +1,280 @@
+#27
+_program
+  #27
+  _class
+    Main
+    IO
+    "./test/primes.cl"
+    (
+    #29
+    _method
+      main
+      Int
+      #30
+      _int
+        0
+      : _no_type
+    #33
+    _attr
+      out
+      Int
+      #34
+      _block
+        #35
+        _dispatch
+          #35
+          _object
+            self
+          : _no_type
+          out_string
+          (
+          #35
+          _string
+            "2 is trivially prime.\n"
+          : _no_type
+          )
+        : _no_type
+        #36
+        _int
+          2
+        : _no_type
+      : _no_type
+    #39
+    _attr
+      testee
+      Int
+      #39
+      _object
+        out
+      : _no_type
+    #41
+    _attr
+      divisor
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #43
+    _attr
+      stop
+      Int
+      #43
+      _int
+        500
+      : _no_type
+    #45
+    _attr
+      m
+      Object
+      #46
+      _loop
+        #46
+        _bool
+          1
+        : _no_type
+        #47
+        _block
+          #49
+          _assign
+            testee
+            #49
+            _plus
+              #49
+              _object
+                testee
+              : _no_type
+              #49
+              _int
+                1
+              : _no_type
+            : _no_type
+          : _no_type
+          #50
+          _assign
+            divisor
+            #50
+            _int
+              2
+            : _no_type
+          : _no_type
+          #52
+          _loop
+            #53
+            _cond
+              #53
+              _lt
+                #53
+                _object
+                  testee
+                : _no_type
+                #53
+                _mul
+                  #53
+                  _object
+                    divisor
+                  : _no_type
+                  #53
+                  _object
+                    divisor
+                  : _no_type
+                : _no_type
+              : _no_type
+              #54
+              _bool
+                0
+              : _no_type
+              #55
+              _cond
+                #55
+                _eq
+                  #55
+                  _sub
+                    #55
+                    _object
+                      testee
+                    : _no_type
+                    #55
+                    _mul
+                      #55
+                      _object
+                        divisor
+                      : _no_type
+                      #55
+                      _divide
+                        #55
+                        _object
+                          testee
+                        : _no_type
+                        #55
+                        _object
+                          divisor
+                        : _no_type
+                      : _no_type
+                    : _no_type
+                  : _no_type
+                  #55
+                  _int
+                    0
+                  : _no_type
+                : _no_type
+                #56
+                _bool
+                  0
+                : _no_type
+                #57
+                _bool
+                  1
+                : _no_type
+              : _no_type
+            : _no_type
+            #60
+            _assign
+              divisor
+              #60
+              _plus
+                #60
+                _object
+                  divisor
+                : _no_type
+                #60
+                _int
+                  1
+                : _no_type
+              : _no_type
+            : _no_type
+          : _no_type
+          #63
+          _cond
+            #63
+            _lt
+              #63
+              _object
+                testee
+              : _no_type
+              #63
+              _mul
+                #63
+                _object
+                  divisor
+                : _no_type
+                #63
+                _object
+                  divisor
+                : _no_type
+              : _no_type
+            : _no_type
+            #65
+            _block
+              #66
+              _assign
+                out
+                #66
+                _object
+                  testee
+                : _no_type
+              : _no_type
+              #67
+              _dispatch
+                #67
+                _object
+                  self
+                : _no_type
+                out_int
+                (
+                #67
+                _object
+                  out
+                : _no_type
+                )
+              : _no_type
+              #68
+              _dispatch
+                #68
+                _object
+                  self
+                : _no_type
+                out_string
+                (
+                #68
+                _string
+                  " is prime.\n"
+                : _no_type
+                )
+              : _no_type
+            : _no_type
+            #71
+            _int
+              0
+            : _no_type
+          : _no_type
+          #74
+          _cond
+            #74
+            _leq
+              #74
+              _object
+                stop
+              : _no_type
+              #74
+              _object
+                testee
+              : _no_type
+            : _no_type
+            #75
+            _dispatch
+              #75
+              _string
+                "halt"
+              : _no_type
+              abort
+              (
+              )
+            : _no_type
+            #77
+            _string
+              "continue"
+            : _no_type
+          : _no_type
+        : _no_type
+      : _no_type
+    )

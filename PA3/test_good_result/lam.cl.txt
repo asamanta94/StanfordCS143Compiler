@@ -1,0 +1,3762 @@
+#21
+_program
+  #21
+  _class
+    VarList
+    IO
+    "./tests/good/lam.cl"
+    (
+    #22
+    _method
+      isNil
+      Bool
+      #22
+      _bool
+        1
+      : Bool
+    #23
+    _method
+      head
+      Variable
+      #23
+      _block
+        #23
+        _dispatch
+          #23
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #23
+        _new
+          Variable
+        : Variable
+      : Variable
+    #24
+    _method
+      tail
+      VarList
+      #24
+      _block
+        #24
+        _dispatch
+          #24
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #24
+        _new
+          VarList
+        : VarList
+      : VarList
+    #25
+    _method
+      add
+      #25
+      _formal
+        x
+        Variable
+      VarList
+      #25
+      _dispatch
+        #25
+        _new
+          VarListNE
+        : VarListNE
+        init
+        (
+        #25
+        _object
+          x
+        : Variable
+        #25
+        _object
+          self
+        : SELF_TYPE
+        )
+      : VarListNE
+    #26
+    _method
+      print
+      SELF_TYPE
+      #26
+      _dispatch
+        #26
+        _object
+          self
+        : SELF_TYPE
+        out_string
+        (
+        #26
+        _string
+          "\n"
+        : String
+        )
+      : SELF_TYPE
+    )
+  #29
+  _class
+    VarListNE
+    VarList
+    "./tests/good/lam.cl"
+    (
+    #30
+    _attr
+      x
+      Variable
+      #0
+      _no_expr
+      : _no_type
+    #31
+    _attr
+      rest
+      VarList
+      #0
+      _no_expr
+      : _no_type
+    #32
+    _method
+      isNil
+      Bool
+      #32
+      _bool
+        0
+      : Bool
+    #33
+    _method
+      head
+      Variable
+      #33
+      _object
+        x
+      : Variable
+    #34
+    _method
+      tail
+      VarList
+      #34
+      _object
+        rest
+      : VarList
+    #35
+    _method
+      init
+      #35
+      _formal
+        y
+        Variable
+      #35
+      _formal
+        r
+        VarList
+      VarListNE
+      #35
+      _block
+        #35
+        _assign
+          x
+          #35
+          _object
+            y
+          : Variable
+        : Variable
+        #35
+        _assign
+          rest
+          #35
+          _object
+            r
+          : VarList
+        : VarList
+        #35
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #36
+    _method
+      print
+      SELF_TYPE
+      #36
+      _block
+        #36
+        _dispatch
+          #36
+          _object
+            x
+          : Variable
+          print_self
+          (
+          )
+        : Variable
+        #36
+        _dispatch
+          #36
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #36
+          _string
+            " "
+          : String
+          )
+        : SELF_TYPE
+        #37
+        _dispatch
+          #37
+          _object
+            rest
+          : VarList
+          print
+          (
+          )
+        : VarList
+        #37
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #44
+  _class
+    LambdaList
+    Object
+    "./tests/good/lam.cl"
+    (
+    #45
+    _method
+      isNil
+      Bool
+      #45
+      _bool
+        1
+      : Bool
+    #46
+    _method
+      headE
+      VarList
+      #46
+      _block
+        #46
+        _dispatch
+          #46
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #46
+        _new
+          VarList
+        : VarList
+      : VarList
+    #47
+    _method
+      headC
+      Lambda
+      #47
+      _block
+        #47
+        _dispatch
+          #47
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #47
+        _new
+          Lambda
+        : Lambda
+      : Lambda
+    #48
+    _method
+      headN
+      Int
+      #48
+      _block
+        #48
+        _dispatch
+          #48
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #48
+        _int
+          0
+        : Int
+      : Int
+    #49
+    _method
+      tail
+      LambdaList
+      #49
+      _block
+        #49
+        _dispatch
+          #49
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #49
+        _new
+          LambdaList
+        : LambdaList
+      : LambdaList
+    #50
+    _method
+      add
+      #50
+      _formal
+        e
+        VarList
+      #50
+      _formal
+        x
+        Lambda
+      #50
+      _formal
+        n
+        Int
+      LambdaList
+      #51
+      _dispatch
+        #51
+        _new
+          LambdaListNE
+        : LambdaListNE
+        init
+        (
+        #51
+        _object
+          e
+        : VarList
+        #51
+        _object
+          x
+        : Lambda
+        #51
+        _object
+          n
+        : Int
+        #51
+        _object
+          self
+        : SELF_TYPE
+        )
+      : LambdaListNE
+    )
+  #55
+  _class
+    LambdaListNE
+    LambdaList
+    "./tests/good/lam.cl"
+    (
+    #56
+    _attr
+      lam
+      Lambda
+      #0
+      _no_expr
+      : _no_type
+    #57
+    _attr
+      num
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #58
+    _attr
+      env
+      VarList
+      #0
+      _no_expr
+      : _no_type
+    #59
+    _attr
+      rest
+      LambdaList
+      #0
+      _no_expr
+      : _no_type
+    #60
+    _method
+      isNil
+      Bool
+      #60
+      _bool
+        0
+      : Bool
+    #61
+    _method
+      headE
+      VarList
+      #61
+      _object
+        env
+      : VarList
+    #62
+    _method
+      headC
+      Lambda
+      #62
+      _object
+        lam
+      : Lambda
+    #63
+    _method
+      headN
+      Int
+      #63
+      _object
+        num
+      : Int
+    #64
+    _method
+      tail
+      LambdaList
+      #64
+      _object
+        rest
+      : LambdaList
+    #65
+    _method
+      init
+      #65
+      _formal
+        e
+        VarList
+      #65
+      _formal
+        l
+        Lambda
+      #65
+      _formal
+        n
+        Int
+      #65
+      _formal
+        r
+        LambdaList
+      LambdaListNE
+      #66
+      _block
+        #67
+        _assign
+          env
+          #67
+          _object
+            e
+          : VarList
+        : VarList
+        #68
+        _assign
+          lam
+          #68
+          _object
+            l
+          : Lambda
+        : Lambda
+        #69
+        _assign
+          num
+          #69
+          _object
+            n
+          : Int
+        : Int
+        #70
+        _assign
+          rest
+          #70
+          _object
+            r
+          : LambdaList
+        : LambdaList
+        #71
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #76
+  _class
+    LambdaListRef
+    Object
+    "./tests/good/lam.cl"
+    (
+    #77
+    _attr
+      nextNum
+      Int
+      #77
+      _int
+        0
+      : Int
+    #78
+    _attr
+      l
+      LambdaList
+      #0
+      _no_expr
+      : _no_type
+    #79
+    _method
+      isNil
+      Bool
+      #79
+      _dispatch
+        #79
+        _object
+          l
+        : LambdaList
+        isNil
+        (
+        )
+      : Bool
+    #80
+    _method
+      headE
+      VarList
+      #80
+      _dispatch
+        #80
+        _object
+          l
+        : LambdaList
+        headE
+        (
+        )
+      : VarList
+    #81
+    _method
+      headC
+      Lambda
+      #81
+      _dispatch
+        #81
+        _object
+          l
+        : LambdaList
+        headC
+        (
+        )
+      : Lambda
+    #82
+    _method
+      headN
+      Int
+      #82
+      _dispatch
+        #82
+        _object
+          l
+        : LambdaList
+        headN
+        (
+        )
+      : Int
+    #83
+    _method
+      reset
+      SELF_TYPE
+      #84
+      _block
+        #85
+        _assign
+          nextNum
+          #85
+          _int
+            0
+          : Int
+        : Int
+        #86
+        _assign
+          l
+          #86
+          _new
+            LambdaList
+          : LambdaList
+        : LambdaList
+        #87
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #90
+    _method
+      add
+      #90
+      _formal
+        env
+        VarList
+      #90
+      _formal
+        c
+        Lambda
+      Int
+      #91
+      _block
+        #92
+        _assign
+          l
+          #92
+          _dispatch
+            #92
+            _object
+              l
+            : LambdaList
+            add
+            (
+            #92
+            _object
+              env
+            : VarList
+            #92
+            _object
+              c
+            : Lambda
+            #92
+            _object
+              nextNum
+            : Int
+            )
+          : LambdaList
+        : LambdaList
+        #93
+        _assign
+          nextNum
+          #93
+          _plus
+            #93
+            _object
+              nextNum
+            : Int
+            #93
+            _int
+              1
+            : Int
+          : Int
+        : Int
+        #94
+        _sub
+          #94
+          _object
+            nextNum
+          : Int
+          #94
+          _int
+            1
+          : Int
+        : Int
+      : Int
+    #97
+    _method
+      removeHead
+      SELF_TYPE
+      #98
+      _block
+        #99
+        _assign
+          l
+          #99
+          _dispatch
+            #99
+            _object
+              l
+            : LambdaList
+            tail
+            (
+            )
+          : LambdaList
+        : LambdaList
+        #100
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #111
+  _class
+    Expr
+    IO
+    "./tests/good/lam.cl"
+    (
+    #114
+    _method
+      print_self
+      SELF_TYPE
+      #115
+      _block
+        #116
+        _dispatch
+          #116
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #116
+          _string
+            "\nError: Expr is pure virtual; can't print self\n"
+          : String
+          )
+        : SELF_TYPE
+        #117
+        _dispatch
+          #117
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #118
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #123
+    _method
+      beta
+      Expr
+      #124
+      _block
+        #125
+        _dispatch
+          #125
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #125
+          _string
+            "\nError: Expr is pure virtual; can't beta-reduce\n"
+          : String
+          )
+        : SELF_TYPE
+        #126
+        _dispatch
+          #126
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #127
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #132
+    _method
+      substitute
+      #132
+      _formal
+        x
+        Variable
+      #132
+      _formal
+        e
+        Expr
+      Expr
+      #133
+      _block
+        #134
+        _dispatch
+          #134
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #134
+          _string
+            "\nError: Expr is pure virtual; can't substitute\n"
+          : String
+          )
+        : SELF_TYPE
+        #135
+        _dispatch
+          #135
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #136
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #141
+    _method
+      gen_code
+      #141
+      _formal
+        env
+        VarList
+      #141
+      _formal
+        closures
+        LambdaListRef
+      SELF_TYPE
+      #142
+      _block
+        #143
+        _dispatch
+          #143
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #143
+          _string
+            "\nError: Expr is pure virtual; can't gen_code\n"
+          : String
+          )
+        : SELF_TYPE
+        #144
+        _dispatch
+          #144
+          _object
+            self
+          : SELF_TYPE
+          abort
+          (
+          )
+        : Object
+        #145
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #153
+  _class
+    Variable
+    Expr
+    "./tests/good/lam.cl"
+    (
+    #154
+    _attr
+      name
+      String
+      #0
+      _no_expr
+      : _no_type
+    #156
+    _method
+      init
+      #156
+      _formal
+        n
+        String
+      Variable
+      #157
+      _block
+        #158
+        _assign
+          name
+          #158
+          _object
+            n
+          : String
+        : String
+        #159
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #163
+    _method
+      print_self
+      SELF_TYPE
+      #164
+      _dispatch
+        #164
+        _object
+          self
+        : SELF_TYPE
+        out_string
+        (
+        #164
+        _object
+          name
+        : String
+        )
+      : SELF_TYPE
+    #167
+    _method
+      beta
+      Expr
+      #167
+      _object
+        self
+      : SELF_TYPE
+    #169
+    _method
+      substitute
+      #169
+      _formal
+        x
+        Variable
+      #169
+      _formal
+        e
+        Expr
+      Expr
+      #170
+      _cond
+        #170
+        _eq
+          #170
+          _object
+            x
+          : Variable
+          #170
+          _object
+            self
+          : SELF_TYPE
+        : Bool
+        #170
+        _object
+          e
+        : Expr
+        #170
+        _object
+          self
+        : SELF_TYPE
+      : Expr
+    #173
+    _method
+      gen_code
+      #173
+      _formal
+        env
+        VarList
+      #173
+      _formal
+        closures
+        LambdaListRef
+      SELF_TYPE
+      #174
+      _let
+        cur_env
+        VarList
+        #174
+        _object
+          env
+        : VarList
+        #175
+        _block
+          #175
+          _loop
+            #175
+            _cond
+              #175
+              _dispatch
+                #175
+                _object
+                  cur_env
+                : VarList
+                isNil
+                (
+                )
+              : Bool
+              #176
+              _bool
+                0
+              : Bool
+              #178
+              _comp
+                #178
+                _eq
+                  #178
+                  _dispatch
+                    #178
+                    _object
+                      cur_env
+                    : VarList
+                    head
+                    (
+                    )
+                  : Variable
+                  #178
+                  _object
+                    self
+                  : SELF_TYPE
+                : Bool
+              : Bool
+            : Bool
+            #180
+            _block
+              #180
+              _dispatch
+                #180
+                _object
+                  self
+                : SELF_TYPE
+                out_string
+                (
+                #180
+                _string
+                  "get_parent()."
+                : String
+                )
+              : SELF_TYPE
+              #181
+              _assign
+                cur_env
+                #181
+                _dispatch
+                  #181
+                  _object
+                    cur_env
+                  : VarList
+                  tail
+                  (
+                  )
+                : VarList
+              : VarList
+            : VarList
+          : Object
+          #184
+          _cond
+            #184
+            _dispatch
+              #184
+              _object
+                cur_env
+              : VarList
+              isNil
+              (
+              )
+            : Bool
+            #185
+            _block
+              #185
+              _dispatch
+                #185
+                _object
+                  self
+                : SELF_TYPE
+                out_string
+                (
+                #185
+                _string
+                  "Error:  free occurrence of "
+                : String
+                )
+              : SELF_TYPE
+              #186
+              _dispatch
+                #186
+                _object
+                  self
+                : SELF_TYPE
+                print_self
+                (
+                )
+              : SELF_TYPE
+              #187
+              _dispatch
+                #187
+                _object
+                  self
+                : SELF_TYPE
+                out_string
+                (
+                #187
+                _string
+                  "\n"
+                : String
+                )
+              : SELF_TYPE
+              #188
+              _dispatch
+                #188
+                _object
+                  self
+                : SELF_TYPE
+                abort
+                (
+                )
+              : Object
+              #189
+              _object
+                self
+              : SELF_TYPE
+            : SELF_TYPE
+            #192
+            _dispatch
+              #192
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #192
+              _string
+                "get_x()"
+              : String
+              )
+            : SELF_TYPE
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #201
+  _class
+    Lambda
+    Expr
+    "./tests/good/lam.cl"
+    (
+    #202
+    _attr
+      arg
+      Variable
+      #0
+      _no_expr
+      : _no_type
+    #203
+    _attr
+      body
+      Expr
+      #0
+      _no_expr
+      : _no_type
+    #205
+    _method
+      init
+      #205
+      _formal
+        a
+        Variable
+      #205
+      _formal
+        b
+        Expr
+      Lambda
+      #206
+      _block
+        #207
+        _assign
+          arg
+          #207
+          _object
+            a
+          : Variable
+        : Variable
+        #208
+        _assign
+          body
+          #208
+          _object
+            b
+          : Expr
+        : Expr
+        #209
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #213
+    _method
+      print_self
+      SELF_TYPE
+      #214
+      _block
+        #215
+        _dispatch
+          #215
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #215
+          _string
+            "\\"
+          : String
+          )
+        : SELF_TYPE
+        #216
+        _dispatch
+          #216
+          _object
+            arg
+          : Variable
+          print_self
+          (
+          )
+        : Variable
+        #217
+        _dispatch
+          #217
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #217
+          _string
+            "."
+          : String
+          )
+        : SELF_TYPE
+        #218
+        _dispatch
+          #218
+          _object
+            body
+          : Expr
+          print_self
+          (
+          )
+        : Expr
+        #219
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #223
+    _method
+      beta
+      Expr
+      #223
+      _object
+        self
+      : SELF_TYPE
+    #225
+    _method
+      apply
+      #225
+      _formal
+        actual
+        Expr
+      Expr
+      #226
+      _dispatch
+        #226
+        _object
+          body
+        : Expr
+        substitute
+        (
+        #226
+        _object
+          arg
+        : Variable
+        #226
+        _object
+          actual
+        : Expr
+        )
+      : Expr
+    #230
+    _method
+      substitute
+      #230
+      _formal
+        x
+        Variable
+      #230
+      _formal
+        e
+        Expr
+      Expr
+      #231
+      _cond
+        #231
+        _eq
+          #231
+          _object
+            x
+          : Variable
+          #231
+          _object
+            arg
+          : Variable
+        : Bool
+        #232
+        _object
+          self
+        : SELF_TYPE
+        #234
+        _let
+          new_body
+          Expr
+          #234
+          _dispatch
+            #234
+            _object
+              body
+            : Expr
+            substitute
+            (
+            #234
+            _object
+              x
+            : Variable
+            #234
+            _object
+              e
+            : Expr
+            )
+          : Expr
+          #235
+          _let
+            new_lam
+            Lambda
+            #235
+            _new
+              Lambda
+            : Lambda
+            #236
+            _dispatch
+              #236
+              _object
+                new_lam
+              : Lambda
+              init
+              (
+              #236
+              _object
+                arg
+              : Variable
+              #236
+              _object
+                new_body
+              : Expr
+              )
+            : Lambda
+          : Lambda
+        : Lambda
+      : Lambda
+    #240
+    _method
+      gen_code
+      #240
+      _formal
+        env
+        VarList
+      #240
+      _formal
+        closures
+        LambdaListRef
+      SELF_TYPE
+      #241
+      _block
+        #242
+        _dispatch
+          #242
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #242
+          _string
+            "((new Closure"
+          : String
+          )
+        : SELF_TYPE
+        #243
+        _dispatch
+          #243
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #243
+          _dispatch
+            #243
+            _object
+              closures
+            : LambdaListRef
+            add
+            (
+            #243
+            _object
+              env
+            : VarList
+            #243
+            _object
+              self
+            : SELF_TYPE
+            )
+          : Int
+          )
+        : SELF_TYPE
+        #244
+        _dispatch
+          #244
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #244
+          _string
+            ").init("
+          : String
+          )
+        : SELF_TYPE
+        #245
+        _cond
+          #245
+          _dispatch
+            #245
+            _object
+              env
+            : VarList
+            isNil
+            (
+            )
+          : Bool
+          #246
+          _dispatch
+            #246
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #246
+            _string
+              "new Closure))"
+            : String
+            )
+          : SELF_TYPE
+          #248
+          _dispatch
+            #248
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #248
+            _string
+              "self))"
+            : String
+            )
+          : SELF_TYPE
+        : SELF_TYPE
+        #249
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #253
+    _method
+      gen_closure_code
+      #253
+      _formal
+        n
+        Int
+      #253
+      _formal
+        env
+        VarList
+      #254
+      _formal
+        closures
+        LambdaListRef
+      SELF_TYPE
+      #255
+      _block
+        #256
+        _dispatch
+          #256
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #256
+          _string
+            "class Closure"
+          : String
+          )
+        : SELF_TYPE
+        #257
+        _dispatch
+          #257
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #257
+          _object
+            n
+          : Int
+          )
+        : SELF_TYPE
+        #258
+        _dispatch
+          #258
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #258
+          _string
+            " inherits Closure {\n"
+          : String
+          )
+        : SELF_TYPE
+        #259
+        _dispatch
+          #259
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #259
+          _string
+            "  apply(y : EvalObject) : EvalObject {\n"
+          : String
+          )
+        : SELF_TYPE
+        #260
+        _dispatch
+          #260
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #260
+          _string
+            "    { out_string(\"Applying closure "
+          : String
+          )
+        : SELF_TYPE
+        #261
+        _dispatch
+          #261
+          _object
+            self
+          : SELF_TYPE
+          out_int
+          (
+          #261
+          _object
+            n
+          : Int
+          )
+        : SELF_TYPE
+        #262
+        _dispatch
+          #262
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #262
+          _string
+            "\\n\");\n"
+          : String
+          )
+        : SELF_TYPE
+        #263
+        _dispatch
+          #263
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #263
+          _string
+            "      x <- y;\n"
+          : String
+          )
+        : SELF_TYPE
+        #264
+        _dispatch
+          #264
+          _object
+            body
+          : Expr
+          gen_code
+          (
+          #264
+          _dispatch
+            #264
+            _object
+              env
+            : VarList
+            add
+            (
+            #264
+            _object
+              arg
+            : Variable
+            )
+          : VarList
+          #264
+          _object
+            closures
+          : LambdaListRef
+          )
+        : Expr
+        #265
+        _dispatch
+          #265
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #265
+          _string
+            ";}};\n"
+          : String
+          )
+        : SELF_TYPE
+        #266
+        _dispatch
+          #266
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #266
+          _string
+            "};\n"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #274
+  _class
+    App
+    Expr
+    "./tests/good/lam.cl"
+    (
+    #275
+    _attr
+      fun
+      Expr
+      #0
+      _no_expr
+      : _no_type
+    #276
+    _attr
+      arg
+      Expr
+      #0
+      _no_expr
+      : _no_type
+    #278
+    _method
+      init
+      #278
+      _formal
+        f
+        Expr
+      #278
+      _formal
+        a
+        Expr
+      App
+      #279
+      _block
+        #280
+        _assign
+          fun
+          #280
+          _object
+            f
+          : Expr
+        : Expr
+        #281
+        _assign
+          arg
+          #281
+          _object
+            a
+          : Expr
+        : Expr
+        #282
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #286
+    _method
+      print_self
+      SELF_TYPE
+      #287
+      _block
+        #288
+        _dispatch
+          #288
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #288
+          _string
+            "(("
+          : String
+          )
+        : SELF_TYPE
+        #289
+        _dispatch
+          #289
+          _object
+            fun
+          : Expr
+          print_self
+          (
+          )
+        : Expr
+        #290
+        _dispatch
+          #290
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #290
+          _string
+            ")@("
+          : String
+          )
+        : SELF_TYPE
+        #291
+        _dispatch
+          #291
+          _object
+            arg
+          : Expr
+          print_self
+          (
+          )
+        : Expr
+        #292
+        _dispatch
+          #292
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #292
+          _string
+            "))"
+          : String
+          )
+        : SELF_TYPE
+        #293
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #297
+    _method
+      beta
+      Expr
+      #298
+      _typcase
+        #298
+        _object
+          fun
+        : Expr
+        #299
+        _branch
+          l
+          Lambda
+          #299
+          _dispatch
+            #299
+            _object
+              l
+            : Lambda
+            apply
+            (
+            #299
+            _object
+              arg
+            : Expr
+            )
+          : Expr
+        #300
+        _branch
+          e
+          Expr
+          #301
+          _let
+            new_fun
+            Expr
+            #301
+            _dispatch
+              #301
+              _object
+                fun
+              : Expr
+              beta
+              (
+              )
+            : Expr
+            #302
+            _let
+              new_app
+              App
+              #302
+              _new
+                App
+              : App
+              #303
+              _dispatch
+                #303
+                _object
+                  new_app
+                : App
+                init
+                (
+                #303
+                _object
+                  new_fun
+                : Expr
+                #303
+                _object
+                  arg
+                : Expr
+                )
+              : App
+            : App
+          : App
+      : Expr
+    #307
+    _method
+      substitute
+      #307
+      _formal
+        x
+        Variable
+      #307
+      _formal
+        e
+        Expr
+      Expr
+      #308
+      _let
+        new_fun
+        Expr
+        #308
+        _dispatch
+          #308
+          _object
+            fun
+          : Expr
+          substitute
+          (
+          #308
+          _object
+            x
+          : Variable
+          #308
+          _object
+            e
+          : Expr
+          )
+        : Expr
+        #309
+        _let
+          new_arg
+          Expr
+          #309
+          _dispatch
+            #309
+            _object
+              arg
+            : Expr
+            substitute
+            (
+            #309
+            _object
+              x
+            : Variable
+            #309
+            _object
+              e
+            : Expr
+            )
+          : Expr
+          #310
+          _let
+            new_app
+            App
+            #310
+            _new
+              App
+            : App
+            #311
+            _dispatch
+              #311
+              _object
+                new_app
+              : App
+              init
+              (
+              #311
+              _object
+                new_fun
+              : Expr
+              #311
+              _object
+                new_arg
+              : Expr
+              )
+            : App
+          : App
+        : App
+      : App
+    #314
+    _method
+      gen_code
+      #314
+      _formal
+        env
+        VarList
+      #314
+      _formal
+        closures
+        LambdaListRef
+      SELF_TYPE
+      #315
+      _block
+        #316
+        _dispatch
+          #316
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #316
+          _string
+            "(let x : EvalObject <- "
+          : String
+          )
+        : SELF_TYPE
+        #317
+        _dispatch
+          #317
+          _object
+            fun
+          : Expr
+          gen_code
+          (
+          #317
+          _object
+            env
+          : VarList
+          #317
+          _object
+            closures
+          : LambdaListRef
+          )
+        : Expr
+        #318
+        _dispatch
+          #318
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #318
+          _string
+            ",\n"
+          : String
+          )
+        : SELF_TYPE
+        #319
+        _dispatch
+          #319
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #319
+          _string
+            "     y : EvalObject <- "
+          : String
+          )
+        : SELF_TYPE
+        #320
+        _dispatch
+          #320
+          _object
+            arg
+          : Expr
+          gen_code
+          (
+          #320
+          _object
+            env
+          : VarList
+          #320
+          _object
+            closures
+          : LambdaListRef
+          )
+        : Expr
+        #321
+        _dispatch
+          #321
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #321
+          _string
+            " in\n"
+          : String
+          )
+        : SELF_TYPE
+        #322
+        _dispatch
+          #322
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #322
+          _string
+            "  case x of\n"
+          : String
+          )
+        : SELF_TYPE
+        #323
+        _dispatch
+          #323
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #323
+          _string
+            "    c : Closure => c.apply(y);\n"
+          : String
+          )
+        : SELF_TYPE
+        #324
+        _dispatch
+          #324
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #324
+          _string
+            "    o : Object => { abort(); new EvalObject; };\n"
+          : String
+          )
+        : SELF_TYPE
+        #325
+        _dispatch
+          #325
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #325
+          _string
+            "  esac)"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #335
+  _class
+    Term
+    IO
+    "./tests/good/lam.cl"
+    (
+    #339
+    _method
+      var
+      #339
+      _formal
+        x
+        String
+      Variable
+      #340
+      _let
+        v
+        Variable
+        #340
+        _new
+          Variable
+        : Variable
+        #341
+        _dispatch
+          #341
+          _object
+            v
+          : Variable
+          init
+          (
+          #341
+          _object
+            x
+          : String
+          )
+        : Variable
+      : Variable
+    #344
+    _method
+      lam
+      #344
+      _formal
+        x
+        Variable
+      #344
+      _formal
+        e
+        Expr
+      Lambda
+      #345
+      _let
+        l
+        Lambda
+        #345
+        _new
+          Lambda
+        : Lambda
+        #346
+        _dispatch
+          #346
+          _object
+            l
+          : Lambda
+          init
+          (
+          #346
+          _object
+            x
+          : Variable
+          #346
+          _object
+            e
+          : Expr
+          )
+        : Lambda
+      : Lambda
+    #349
+    _method
+      app
+      #349
+      _formal
+        e1
+        Expr
+      #349
+      _formal
+        e2
+        Expr
+      App
+      #350
+      _let
+        a
+        App
+        #350
+        _new
+          App
+        : App
+        #351
+        _dispatch
+          #351
+          _object
+            a
+          : App
+          init
+          (
+          #351
+          _object
+            e1
+          : Expr
+          #351
+          _object
+            e2
+          : Expr
+          )
+        : App
+      : App
+    #357
+    _method
+      i
+      Expr
+      #358
+      _let
+        x
+        Variable
+        #358
+        _dispatch
+          #358
+          _object
+            self
+          : SELF_TYPE
+          var
+          (
+          #358
+          _string
+            "x"
+          : String
+          )
+        : Variable
+        #359
+        _dispatch
+          #359
+          _object
+            self
+          : SELF_TYPE
+          lam
+          (
+          #359
+          _object
+            x
+          : Variable
+          #359
+          _object
+            x
+          : Variable
+          )
+        : Lambda
+      : Lambda
+    #362
+    _method
+      k
+      Expr
+      #363
+      _let
+        x
+        Variable
+        #363
+        _dispatch
+          #363
+          _object
+            self
+          : SELF_TYPE
+          var
+          (
+          #363
+          _string
+            "x"
+          : String
+          )
+        : Variable
+        #364
+        _let
+          y
+          Variable
+          #364
+          _dispatch
+            #364
+            _object
+              self
+            : SELF_TYPE
+            var
+            (
+            #364
+            _string
+              "y"
+            : String
+            )
+          : Variable
+          #365
+          _dispatch
+            #365
+            _object
+              self
+            : SELF_TYPE
+            lam
+            (
+            #365
+            _object
+              x
+            : Variable
+            #365
+            _dispatch
+              #365
+              _object
+                self
+              : SELF_TYPE
+              lam
+              (
+              #365
+              _object
+                y
+              : Variable
+              #365
+              _object
+                x
+              : Variable
+              )
+            : Lambda
+            )
+          : Lambda
+        : Lambda
+      : Lambda
+    #368
+    _method
+      s
+      Expr
+      #369
+      _let
+        x
+        Variable
+        #369
+        _dispatch
+          #369
+          _object
+            self
+          : SELF_TYPE
+          var
+          (
+          #369
+          _string
+            "x"
+          : String
+          )
+        : Variable
+        #370
+        _let
+          y
+          Variable
+          #370
+          _dispatch
+            #370
+            _object
+              self
+            : SELF_TYPE
+            var
+            (
+            #370
+            _string
+              "y"
+            : String
+            )
+          : Variable
+          #371
+          _let
+            z
+            Variable
+            #371
+            _dispatch
+              #371
+              _object
+                self
+              : SELF_TYPE
+              var
+              (
+              #371
+              _string
+                "z"
+              : String
+              )
+            : Variable
+            #372
+            _dispatch
+              #372
+              _object
+                self
+              : SELF_TYPE
+              lam
+              (
+              #372
+              _object
+                x
+              : Variable
+              #372
+              _dispatch
+                #372
+                _object
+                  self
+                : SELF_TYPE
+                lam
+                (
+                #372
+                _object
+                  y
+                : Variable
+                #372
+                _dispatch
+                  #372
+                  _object
+                    self
+                  : SELF_TYPE
+                  lam
+                  (
+                  #372
+                  _object
+                    z
+                  : Variable
+                  #372
+                  _dispatch
+                    #372
+                    _object
+                      self
+                    : SELF_TYPE
+                    app
+                    (
+                    #372
+                    _dispatch
+                      #372
+                      _object
+                        self
+                      : SELF_TYPE
+                      app
+                      (
+                      #372
+                      _object
+                        x
+                      : Variable
+                      #372
+                      _object
+                        z
+                      : Variable
+                      )
+                    : App
+                    #372
+                    _dispatch
+                      #372
+                      _object
+                        self
+                      : SELF_TYPE
+                      app
+                      (
+                      #372
+                      _object
+                        y
+                      : Variable
+                      #372
+                      _object
+                        z
+                      : Variable
+                      )
+                    : App
+                    )
+                  : App
+                  )
+                : Lambda
+                )
+              : Lambda
+              )
+            : Lambda
+          : Lambda
+        : Lambda
+      : Lambda
+    )
+  #383
+  _class
+    Main
+    Term
+    "./tests/good/lam.cl"
+    (
+    #385
+    _method
+      beta_reduce
+      #385
+      _formal
+        e
+        Expr
+      Expr
+      #386
+      _block
+        #387
+        _dispatch
+          #387
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #387
+          _string
+            "beta-reduce: "
+          : String
+          )
+        : SELF_TYPE
+        #388
+        _dispatch
+          #388
+          _object
+            e
+          : Expr
+          print_self
+          (
+          )
+        : Expr
+        #389
+        _let
+          done
+          Bool
+          #389
+          _bool
+            0
+          : Bool
+          #390
+          _let
+            new_expr
+            Expr
+            #0
+            _no_expr
+            : _no_type
+            #391
+            _block
+              #392
+              _loop
+                #392
+                _comp
+                  #392
+                  _object
+                    done
+                  : Bool
+                : Bool
+                #393
+                _block
+                  #394
+                  _assign
+                    new_expr
+                    #394
+                    _dispatch
+                      #394
+                      _object
+                        e
+                      : Expr
+                      beta
+                      (
+                      )
+                    : Expr
+                  : Expr
+                  #395
+                  _cond
+                    #395
+                    _eq
+                      #395
+                      _object
+                        new_expr
+                      : Expr
+                      #395
+                      _object
+                        e
+                      : Expr
+                    : Bool
+                    #396
+                    _assign
+                      done
+                      #396
+                      _bool
+                        1
+                      : Bool
+                    : Bool
+                    #398
+                    _block
+                      #399
+                      _assign
+                        e
+                        #399
+                        _object
+                          new_expr
+                        : Expr
+                      : Expr
+                      #400
+                      _dispatch
+                        #400
+                        _object
+                          self
+                        : SELF_TYPE
+                        out_string
+                        (
+                        #400
+                        _string
+                          " =>\n"
+                        : String
+                        )
+                      : SELF_TYPE
+                      #401
+                      _dispatch
+                        #401
+                        _object
+                          e
+                        : Expr
+                        print_self
+                        (
+                        )
+                      : Expr
+                    : Expr
+                  : Object
+                : Object
+              : Object
+              #406
+              _dispatch
+                #406
+                _object
+                  self
+                : SELF_TYPE
+                out_string
+                (
+                #406
+                _string
+                  "\n"
+                : String
+                )
+              : SELF_TYPE
+              #407
+              _object
+                e
+              : Expr
+            : Expr
+          : Expr
+        : Expr
+      : Expr
+    #412
+    _method
+      eval_class
+      SELF_TYPE
+      #413
+      _block
+        #414
+        _dispatch
+          #414
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #414
+          _string
+            "class EvalObject inherits IO {\n"
+          : String
+          )
+        : SELF_TYPE
+        #415
+        _dispatch
+          #415
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #415
+          _string
+            "  eval() : EvalObject { { abort(); self; } };\n"
+          : String
+          )
+        : SELF_TYPE
+        #416
+        _dispatch
+          #416
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #416
+          _string
+            "};\n"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    #420
+    _method
+      closure_class
+      SELF_TYPE
+      #421
+      _block
+        #422
+        _dispatch
+          #422
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #422
+          _string
+            "class Closure inherits EvalObject {\n"
+          : String
+          )
+        : SELF_TYPE
+        #423
+        _dispatch
+          #423
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #423
+          _string
+            "  parent : Closure;\n"
+          : String
+          )
+        : SELF_TYPE
+        #424
+        _dispatch
+          #424
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #424
+          _string
+            "  x : EvalObject;\n"
+          : String
+          )
+        : SELF_TYPE
+        #425
+        _dispatch
+          #425
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #425
+          _string
+            "  get_parent() : Closure { parent };\n"
+          : String
+          )
+        : SELF_TYPE
+        #426
+        _dispatch
+          #426
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #426
+          _string
+            "  get_x() : EvalObject { x };\n"
+          : String
+          )
+        : SELF_TYPE
+        #427
+        _dispatch
+          #427
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #427
+          _string
+            "  init(p : Closure) : Closure {{ parent <- p; self; }};\n"
+          : String
+          )
+        : SELF_TYPE
+        #428
+        _dispatch
+          #428
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #428
+          _string
+            "  apply(y : EvalObject) : EvalObject { { abort(); self; } };\n"
+          : String
+          )
+        : SELF_TYPE
+        #429
+        _dispatch
+          #429
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #429
+          _string
+            "};\n"
+          : String
+          )
+        : SELF_TYPE
+      : SELF_TYPE
+    #433
+    _method
+      gen_code
+      #433
+      _formal
+        e
+        Expr
+      SELF_TYPE
+      #434
+      _let
+        cl
+        LambdaListRef
+        #434
+        _dispatch
+          #434
+          _new
+            LambdaListRef
+          : LambdaListRef
+          reset
+          (
+          )
+        : LambdaListRef
+        #435
+        _block
+          #436
+          _dispatch
+            #436
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #436
+            _string
+              "Generating code for "
+            : String
+            )
+          : SELF_TYPE
+          #437
+          _dispatch
+            #437
+            _object
+              e
+            : Expr
+            print_self
+            (
+            )
+          : Expr
+          #438
+          _dispatch
+            #438
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #438
+            _string
+              "\n------------------cut here------------------\n"
+            : String
+            )
+          : SELF_TYPE
+          #439
+          _dispatch
+            #439
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #439
+            _string
+              "(*Generated by lam.cl (Jeff Foster, March 2000)*)\n"
+            : String
+            )
+          : SELF_TYPE
+          #440
+          _dispatch
+            #440
+            _object
+              self
+            : SELF_TYPE
+            eval_class
+            (
+            )
+          : SELF_TYPE
+          #441
+          _dispatch
+            #441
+            _object
+              self
+            : SELF_TYPE
+            closure_class
+            (
+            )
+          : SELF_TYPE
+          #442
+          _dispatch
+            #442
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #442
+            _string
+              "class Main {\n"
+            : String
+            )
+          : SELF_TYPE
+          #443
+          _dispatch
+            #443
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #443
+            _string
+              "  main() : EvalObject {\n"
+            : String
+            )
+          : SELF_TYPE
+          #444
+          _dispatch
+            #444
+            _object
+              e
+            : Expr
+            gen_code
+            (
+            #444
+            _new
+              VarList
+            : VarList
+            #444
+            _object
+              cl
+            : LambdaListRef
+            )
+          : Expr
+          #445
+          _dispatch
+            #445
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #445
+            _string
+              "\n};\n};\n"
+            : String
+            )
+          : SELF_TYPE
+          #446
+          _loop
+            #446
+            _comp
+              #446
+              _dispatch
+                #446
+                _object
+                  cl
+                : LambdaListRef
+                isNil
+                (
+                )
+              : Bool
+            : Bool
+            #447
+            _let
+              e
+              VarList
+              #447
+              _dispatch
+                #447
+                _object
+                  cl
+                : LambdaListRef
+                headE
+                (
+                )
+              : VarList
+              #448
+              _let
+                c
+                Lambda
+                #448
+                _dispatch
+                  #448
+                  _object
+                    cl
+                  : LambdaListRef
+                  headC
+                  (
+                  )
+                : Lambda
+                #449
+                _let
+                  n
+                  Int
+                  #449
+                  _dispatch
+                    #449
+                    _object
+                      cl
+                    : LambdaListRef
+                    headN
+                    (
+                    )
+                  : Int
+                  #450
+                  _block
+                    #451
+                    _dispatch
+                      #451
+                      _object
+                        cl
+                      : LambdaListRef
+                      removeHead
+                      (
+                      )
+                    : LambdaListRef
+                    #452
+                    _dispatch
+                      #452
+                      _object
+                        c
+                      : Lambda
+                      gen_closure_code
+                      (
+                      #452
+                      _object
+                        n
+                      : Int
+                      #452
+                      _object
+                        e
+                      : VarList
+                      #452
+                      _object
+                        cl
+                      : LambdaListRef
+                      )
+                    : Lambda
+                  : Lambda
+                : Lambda
+              : Lambda
+            : Lambda
+          : Object
+          #455
+          _dispatch
+            #455
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #455
+            _string
+              "\n------------------cut here------------------\n"
+            : String
+            )
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    #459
+    _method
+      main
+      Int
+      #460
+      _block
+        #461
+        _dispatch
+          #461
+          _dispatch
+            #461
+            _object
+              self
+            : SELF_TYPE
+            i
+            (
+            )
+          : Expr
+          print_self
+          (
+          )
+        : Expr
+        #462
+        _dispatch
+          #462
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #462
+          _string
+            "\n"
+          : String
+          )
+        : SELF_TYPE
+        #463
+        _dispatch
+          #463
+          _dispatch
+            #463
+            _object
+              self
+            : SELF_TYPE
+            k
+            (
+            )
+          : Expr
+          print_self
+          (
+          )
+        : Expr
+        #464
+        _dispatch
+          #464
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #464
+          _string
+            "\n"
+          : String
+          )
+        : SELF_TYPE
+        #465
+        _dispatch
+          #465
+          _dispatch
+            #465
+            _object
+              self
+            : SELF_TYPE
+            s
+            (
+            )
+          : Expr
+          print_self
+          (
+          )
+        : Expr
+        #466
+        _dispatch
+          #466
+          _object
+            self
+          : SELF_TYPE
+          out_string
+          (
+          #466
+          _string
+            "\n"
+          : String
+          )
+        : SELF_TYPE
+        #467
+        _dispatch
+          #467
+          _object
+            self
+          : SELF_TYPE
+          beta_reduce
+          (
+          #467
+          _dispatch
+            #467
+            _object
+              self
+            : SELF_TYPE
+            app
+            (
+            #467
+            _dispatch
+              #467
+              _object
+                self
+              : SELF_TYPE
+              app
+              (
+              #467
+              _dispatch
+                #467
+                _object
+                  self
+                : SELF_TYPE
+                app
+                (
+                #467
+                _dispatch
+                  #467
+                  _object
+                    self
+                  : SELF_TYPE
+                  s
+                  (
+                  )
+                : Expr
+                #467
+                _dispatch
+                  #467
+                  _object
+                    self
+                  : SELF_TYPE
+                  k
+                  (
+                  )
+                : Expr
+                )
+              : App
+              #467
+              _dispatch
+                #467
+                _object
+                  self
+                : SELF_TYPE
+                i
+                (
+                )
+              : Expr
+              )
+            : App
+            #467
+            _dispatch
+              #467
+              _object
+                self
+              : SELF_TYPE
+              i
+              (
+              )
+            : Expr
+            )
+          : App
+          )
+        : Expr
+        #468
+        _dispatch
+          #468
+          _object
+            self
+          : SELF_TYPE
+          beta_reduce
+          (
+          #468
+          _dispatch
+            #468
+            _object
+              self
+            : SELF_TYPE
+            app
+            (
+            #468
+            _dispatch
+              #468
+              _object
+                self
+              : SELF_TYPE
+              app
+              (
+              #468
+              _dispatch
+                #468
+                _object
+                  self
+                : SELF_TYPE
+                k
+                (
+                )
+              : Expr
+              #468
+              _dispatch
+                #468
+                _object
+                  self
+                : SELF_TYPE
+                i
+                (
+                )
+              : Expr
+              )
+            : App
+            #468
+            _dispatch
+              #468
+              _object
+                self
+              : SELF_TYPE
+              i
+              (
+              )
+            : Expr
+            )
+          : App
+          )
+        : Expr
+        #469
+        _dispatch
+          #469
+          _object
+            self
+          : SELF_TYPE
+          gen_code
+          (
+          #469
+          _dispatch
+            #469
+            _object
+              self
+            : SELF_TYPE
+            app
+            (
+            #469
+            _dispatch
+              #469
+              _object
+                self
+              : SELF_TYPE
+              i
+              (
+              )
+            : Expr
+            #469
+            _dispatch
+              #469
+              _object
+                self
+              : SELF_TYPE
+              i
+              (
+              )
+            : Expr
+            )
+          : App
+          )
+        : SELF_TYPE
+        #470
+        _dispatch
+          #470
+          _object
+            self
+          : SELF_TYPE
+          gen_code
+          (
+          #470
+          _dispatch
+            #470
+            _object
+              self
+            : SELF_TYPE
+            app
+            (
+            #470
+            _dispatch
+              #470
+              _object
+                self
+              : SELF_TYPE
+              app
+              (
+              #470
+              _dispatch
+                #470
+                _object
+                  self
+                : SELF_TYPE
+                app
+                (
+                #470
+                _dispatch
+                  #470
+                  _object
+                    self
+                  : SELF_TYPE
+                  s
+                  (
+                  )
+                : Expr
+                #470
+                _dispatch
+                  #470
+                  _object
+                    self
+                  : SELF_TYPE
+                  k
+                  (
+                  )
+                : Expr
+                )
+              : App
+              #470
+              _dispatch
+                #470
+                _object
+                  self
+                : SELF_TYPE
+                i
+                (
+                )
+              : Expr
+              )
+            : App
+            #470
+            _dispatch
+              #470
+              _object
+                self
+              : SELF_TYPE
+              i
+              (
+              )
+            : Expr
+            )
+          : App
+          )
+        : SELF_TYPE
+        #471
+        _dispatch
+          #471
+          _object
+            self
+          : SELF_TYPE
+          gen_code
+          (
+          #471
+          _dispatch
+            #471
+            _object
+              self
+            : SELF_TYPE
+            app
+            (
+            #471
+            _dispatch
+              #471
+              _object
+                self
+              : SELF_TYPE
+              app
+              (
+              #471
+              _dispatch
+                #471
+                _object
+                  self
+                : SELF_TYPE
+                app
+                (
+                #471
+                _dispatch
+                  #471
+                  _object
+                    self
+                  : SELF_TYPE
+                  app
+                  (
+                  #471
+                  _dispatch
+                    #471
+                    _object
+                      self
+                    : SELF_TYPE
+                    app
+                    (
+                    #471
+                    _dispatch
+                      #471
+                      _object
+                        self
+                      : SELF_TYPE
+                      app
+                      (
+                      #471
+                      _dispatch
+                        #471
+                        _object
+                          self
+                        : SELF_TYPE
+                        app
+                        (
+                        #471
+                        _dispatch
+                          #471
+                          _object
+                            self
+                          : SELF_TYPE
+                          app
+                          (
+                          #471
+                          _dispatch
+                            #471
+                            _object
+                              self
+                            : SELF_TYPE
+                            i
+                            (
+                            )
+                          : Expr
+                          #471
+                          _dispatch
+                            #471
+                            _object
+                              self
+                            : SELF_TYPE
+                            k
+                            (
+                            )
+                          : Expr
+                          )
+                        : App
+                        #471
+                        _dispatch
+                          #471
+                          _object
+                            self
+                          : SELF_TYPE
+                          s
+                          (
+                          )
+                        : Expr
+                        )
+                      : App
+                      #471
+                      _dispatch
+                        #471
+                        _object
+                          self
+                        : SELF_TYPE
+                        s
+                        (
+                        )
+                      : Expr
+                      )
+                    : App
+                    #472
+                    _dispatch
+                      #472
+                      _object
+                        self
+                      : SELF_TYPE
+                      k
+                      (
+                      )
+                    : Expr
+                    )
+                  : App
+                  #472
+                  _dispatch
+                    #472
+                    _object
+                      self
+                    : SELF_TYPE
+                    s
+                    (
+                    )
+                  : Expr
+                  )
+                : App
+                #472
+                _dispatch
+                  #472
+                  _object
+                    self
+                  : SELF_TYPE
+                  i
+                  (
+                  )
+                : Expr
+                )
+              : App
+              #472
+              _dispatch
+                #472
+                _object
+                  self
+                : SELF_TYPE
+                k
+                (
+                )
+              : Expr
+              )
+            : App
+            #472
+            _dispatch
+              #472
+              _object
+                self
+              : SELF_TYPE
+              i
+              (
+              )
+            : Expr
+            )
+          : App
+          )
+        : SELF_TYPE
+        #473
+        _dispatch
+          #473
+          _object
+            self
+          : SELF_TYPE
+          gen_code
+          (
+          #473
+          _dispatch
+            #473
+            _object
+              self
+            : SELF_TYPE
+            app
+            (
+            #473
+            _dispatch
+              #473
+              _object
+                self
+              : SELF_TYPE
+              app
+              (
+              #473
+              _dispatch
+                #473
+                _object
+                  self
+                : SELF_TYPE
+                i
+                (
+                )
+              : Expr
+              #473
+              _dispatch
+                #473
+                _object
+                  self
+                : SELF_TYPE
+                app
+                (
+                #473
+                _dispatch
+                  #473
+                  _object
+                    self
+                  : SELF_TYPE
+                  k
+                  (
+                  )
+                : Expr
+                #473
+                _dispatch
+                  #473
+                  _object
+                    self
+                  : SELF_TYPE
+                  s
+                  (
+                  )
+                : Expr
+                )
+              : App
+              )
+            : App
+            #473
+            _dispatch
+              #473
+              _object
+                self
+              : SELF_TYPE
+              app
+              (
+              #473
+              _dispatch
+                #473
+                _object
+                  self
+                : SELF_TYPE
+                k
+                (
+                )
+              : Expr
+              #473
+              _dispatch
+                #473
+                _object
+                  self
+                : SELF_TYPE
+                app
+                (
+                #473
+                _dispatch
+                  #473
+                  _object
+                    self
+                  : SELF_TYPE
+                  s
+                  (
+                  )
+                : Expr
+                #473
+                _dispatch
+                  #473
+                  _object
+                    self
+                  : SELF_TYPE
+                  s
+                  (
+                  )
+                : Expr
+                )
+              : App
+              )
+            : App
+            )
+          : App
+          )
+        : SELF_TYPE
+        #474
+        _int
+          0
+        : Int
+      : Int
+    )

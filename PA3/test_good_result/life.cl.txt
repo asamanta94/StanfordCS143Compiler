@@ -1,0 +1,2859 @@
+#45
+_program
+  #45
+  _class
+    Board
+    IO
+    "./tests/good/life.cl"
+    (
+    #47
+    _attr
+      rows
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #48
+    _attr
+      columns
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #49
+    _attr
+      board_size
+      Int
+      #0
+      _no_expr
+      : _no_type
+    #51
+    _method
+      size_of_board
+      #51
+      _formal
+        initial
+        String
+      Int
+      #52
+      _dispatch
+        #52
+        _object
+          initial
+        : String
+        length
+        (
+        )
+      : Int
+    #55
+    _method
+      board_init
+      #55
+      _formal
+        start
+        String
+      SELF_TYPE
+      #56
+      _let
+        size
+        Int
+        #56
+        _dispatch
+          #56
+          _object
+            self
+          : SELF_TYPE
+          size_of_board
+          (
+          #56
+          _object
+            start
+          : String
+          )
+        : Int
+        #57
+        _block
+          #58
+          _cond
+            #58
+            _eq
+              #58
+              _object
+                size
+              : Int
+              #58
+              _int
+                15
+              : Int
+            : Bool
+            #59
+            _block
+              #60
+              _assign
+                rows
+                #60
+                _int
+                  3
+                : Int
+              : Int
+              #61
+              _assign
+                columns
+                #61
+                _int
+                  5
+                : Int
+              : Int
+              #62
+              _assign
+                board_size
+                #62
+                _object
+                  size
+                : Int
+              : Int
+            : Int
+            #64
+            _cond
+              #64
+              _eq
+                #64
+                _object
+                  size
+                : Int
+                #64
+                _int
+                  16
+                : Int
+              : Bool
+              #65
+              _block
+                #66
+                _assign
+                  rows
+                  #66
+                  _int
+                    4
+                  : Int
+                : Int
+                #67
+                _assign
+                  columns
+                  #67
+                  _int
+                    4
+                  : Int
+                : Int
+                #68
+                _assign
+                  board_size
+                  #68
+                  _object
+                    size
+                  : Int
+                : Int
+              : Int
+              #70
+              _cond
+                #70
+                _eq
+                  #70
+                  _object
+                    size
+                  : Int
+                  #70
+                  _int
+                    20
+                  : Int
+                : Bool
+                #71
+                _block
+                  #72
+                  _assign
+                    rows
+                    #72
+                    _int
+                      4
+                    : Int
+                  : Int
+                  #73
+                  _assign
+                    columns
+                    #73
+                    _int
+                      5
+                    : Int
+                  : Int
+                  #74
+                  _assign
+                    board_size
+                    #74
+                    _object
+                      size
+                    : Int
+                  : Int
+                : Int
+                #76
+                _cond
+                  #76
+                  _eq
+                    #76
+                    _object
+                      size
+                    : Int
+                    #76
+                    _int
+                      21
+                    : Int
+                  : Bool
+                  #77
+                  _block
+                    #78
+                    _assign
+                      rows
+                      #78
+                      _int
+                        3
+                      : Int
+                    : Int
+                    #79
+                    _assign
+                      columns
+                      #79
+                      _int
+                        7
+                      : Int
+                    : Int
+                    #80
+                    _assign
+                      board_size
+                      #80
+                      _object
+                        size
+                      : Int
+                    : Int
+                  : Int
+                  #82
+                  _cond
+                    #82
+                    _eq
+                      #82
+                      _object
+                        size
+                      : Int
+                      #82
+                      _int
+                        25
+                      : Int
+                    : Bool
+                    #83
+                    _block
+                      #84
+                      _assign
+                        rows
+                        #84
+                        _int
+                          5
+                        : Int
+                      : Int
+                      #85
+                      _assign
+                        columns
+                        #85
+                        _int
+                          5
+                        : Int
+                      : Int
+                      #86
+                      _assign
+                        board_size
+                        #86
+                        _object
+                          size
+                        : Int
+                      : Int
+                    : Int
+                    #88
+                    _cond
+                      #88
+                      _eq
+                        #88
+                        _object
+                          size
+                        : Int
+                        #88
+                        _int
+                          28
+                        : Int
+                      : Bool
+                      #89
+                      _block
+                        #90
+                        _assign
+                          rows
+                          #90
+                          _int
+                            7
+                          : Int
+                        : Int
+                        #91
+                        _assign
+                          columns
+                          #91
+                          _int
+                            4
+                          : Int
+                        : Int
+                        #92
+                        _assign
+                          board_size
+                          #92
+                          _object
+                            size
+                          : Int
+                        : Int
+                      : Int
+                      #95
+                      _block
+                        #96
+                        _assign
+                          rows
+                          #96
+                          _int
+                            5
+                          : Int
+                        : Int
+                        #97
+                        _assign
+                          columns
+                          #97
+                          _int
+                            5
+                          : Int
+                        : Int
+                        #98
+                        _assign
+                          board_size
+                          #98
+                          _object
+                            size
+                          : Int
+                        : Int
+                      : Int
+                    : Int
+                  : Int
+                : Int
+              : Int
+            : Int
+          : Int
+          #101
+          _object
+            self
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    )
+  #110
+  _class
+    CellularAutomaton
+    Board
+    "./tests/good/life.cl"
+    (
+    #111
+    _attr
+      population_map
+      String
+      #0
+      _no_expr
+      : _no_type
+    #113
+    _method
+      init
+      #113
+      _formal
+        map
+        String
+      SELF_TYPE
+      #114
+      _block
+        #115
+        _assign
+          population_map
+          #115
+          _object
+            map
+          : String
+        : String
+        #116
+        _dispatch
+          #116
+          _object
+            self
+          : SELF_TYPE
+          board_init
+          (
+          #116
+          _object
+            map
+          : String
+          )
+        : SELF_TYPE
+        #117
+        _object
+          self
+        : SELF_TYPE
+      : SELF_TYPE
+    #124
+    _method
+      print
+      SELF_TYPE
+      #126
+      _let
+        i
+        Int
+        #126
+        _int
+          0
+        : Int
+        #127
+        _let
+          num
+          Int
+          #127
+          _object
+            board_size
+          : Int
+          #128
+          _block
+            #129
+            _dispatch
+              #129
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #129
+              _string
+                "\n"
+              : String
+              )
+            : SELF_TYPE
+            #130
+            _loop
+              #130
+              _lt
+                #130
+                _object
+                  i
+                : Int
+                #130
+                _object
+                  num
+                : Int
+              : Bool
+              #131
+              _block
+                #132
+                _dispatch
+                  #132
+                  _object
+                    self
+                  : SELF_TYPE
+                  out_string
+                  (
+                  #132
+                  _dispatch
+                    #132
+                    _object
+                      population_map
+                    : String
+                    substr
+                    (
+                    #132
+                    _object
+                      i
+                    : Int
+                    #132
+                    _object
+                      columns
+                    : Int
+                    )
+                  : String
+                  )
+                : SELF_TYPE
+                #133
+                _dispatch
+                  #133
+                  _object
+                    self
+                  : SELF_TYPE
+                  out_string
+                  (
+                  #133
+                  _string
+                    "\n"
+                  : String
+                  )
+                : SELF_TYPE
+                #134
+                _assign
+                  i
+                  #134
+                  _plus
+                    #134
+                    _object
+                      i
+                    : Int
+                    #134
+                    _object
+                      columns
+                    : Int
+                  : Int
+                : Int
+              : Int
+            : Object
+            #137
+            _dispatch
+              #137
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #137
+              _string
+                "\n"
+              : String
+              )
+            : SELF_TYPE
+            #138
+            _object
+              self
+            : SELF_TYPE
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    #143
+    _method
+      num_cells
+      Int
+      #144
+      _dispatch
+        #144
+        _object
+          population_map
+        : String
+        length
+        (
+        )
+      : Int
+    #147
+    _method
+      cell
+      #147
+      _formal
+        position
+        Int
+      String
+      #148
+      _cond
+        #148
+        _lt
+          #148
+          _sub
+            #148
+            _object
+              board_size
+            : Int
+            #148
+            _int
+              1
+            : Int
+          : Int
+          #148
+          _object
+            position
+          : Int
+        : Bool
+        #149
+        _string
+          " "
+        : String
+        #151
+        _dispatch
+          #151
+          _object
+            population_map
+          : String
+          substr
+          (
+          #151
+          _object
+            position
+          : Int
+          #151
+          _int
+            1
+          : Int
+          )
+        : String
+      : String
+    #155
+    _method
+      north
+      #155
+      _formal
+        position
+        Int
+      String
+      #156
+      _cond
+        #156
+        _lt
+          #156
+          _sub
+            #156
+            _object
+              position
+            : Int
+            #156
+            _object
+              columns
+            : Int
+          : Int
+          #156
+          _int
+            0
+          : Int
+        : Bool
+        #157
+        _string
+          " "
+        : String
+        #159
+        _dispatch
+          #159
+          _object
+            self
+          : SELF_TYPE
+          cell
+          (
+          #159
+          _sub
+            #159
+            _object
+              position
+            : Int
+            #159
+            _object
+              columns
+            : Int
+          : Int
+          )
+        : String
+      : String
+    #163
+    _method
+      south
+      #163
+      _formal
+        position
+        Int
+      String
+      #164
+      _cond
+        #164
+        _lt
+          #164
+          _object
+            board_size
+          : Int
+          #164
+          _plus
+            #164
+            _object
+              position
+            : Int
+            #164
+            _object
+              columns
+            : Int
+          : Int
+        : Bool
+        #165
+        _string
+          " "
+        : String
+        #167
+        _dispatch
+          #167
+          _object
+            self
+          : SELF_TYPE
+          cell
+          (
+          #167
+          _plus
+            #167
+            _object
+              position
+            : Int
+            #167
+            _object
+              columns
+            : Int
+          : Int
+          )
+        : String
+      : String
+    #171
+    _method
+      east
+      #171
+      _formal
+        position
+        Int
+      String
+      #172
+      _cond
+        #172
+        _eq
+          #172
+          _mul
+            #172
+            _divide
+              #172
+              _plus
+                #172
+                _object
+                  position
+                : Int
+                #172
+                _int
+                  1
+                : Int
+              : Int
+              #172
+              _object
+                columns
+              : Int
+            : Int
+            #172
+            _object
+              columns
+            : Int
+          : Int
+          #172
+          _plus
+            #172
+            _object
+              position
+            : Int
+            #172
+            _int
+              1
+            : Int
+          : Int
+        : Bool
+        #173
+        _string
+          " "
+        : String
+        #175
+        _dispatch
+          #175
+          _object
+            self
+          : SELF_TYPE
+          cell
+          (
+          #175
+          _plus
+            #175
+            _object
+              position
+            : Int
+            #175
+            _int
+              1
+            : Int
+          : Int
+          )
+        : String
+      : String
+    #179
+    _method
+      west
+      #179
+      _formal
+        position
+        Int
+      String
+      #180
+      _cond
+        #180
+        _eq
+          #180
+          _object
+            position
+          : Int
+          #180
+          _int
+            0
+          : Int
+        : Bool
+        #181
+        _string
+          " "
+        : String
+        #183
+        _cond
+          #183
+          _eq
+            #183
+            _mul
+              #183
+              _divide
+                #183
+                _object
+                  position
+                : Int
+                #183
+                _object
+                  columns
+                : Int
+              : Int
+              #183
+              _object
+                columns
+              : Int
+            : Int
+            #183
+            _object
+              position
+            : Int
+          : Bool
+          #184
+          _string
+            " "
+          : String
+          #186
+          _dispatch
+            #186
+            _object
+              self
+            : SELF_TYPE
+            cell
+            (
+            #186
+            _sub
+              #186
+              _object
+                position
+              : Int
+              #186
+              _int
+                1
+              : Int
+            : Int
+            )
+          : String
+        : String
+      : String
+    #190
+    _method
+      northwest
+      #190
+      _formal
+        position
+        Int
+      String
+      #191
+      _cond
+        #191
+        _lt
+          #191
+          _sub
+            #191
+            _object
+              position
+            : Int
+            #191
+            _object
+              columns
+            : Int
+          : Int
+          #191
+          _int
+            0
+          : Int
+        : Bool
+        #192
+        _string
+          " "
+        : String
+        #193
+        _cond
+          #193
+          _eq
+            #193
+            _mul
+              #193
+              _divide
+                #193
+                _object
+                  position
+                : Int
+                #193
+                _object
+                  columns
+                : Int
+              : Int
+              #193
+              _object
+                columns
+              : Int
+            : Int
+            #193
+            _object
+              position
+            : Int
+          : Bool
+          #194
+          _string
+            " "
+          : String
+          #196
+          _dispatch
+            #196
+            _object
+              self
+            : SELF_TYPE
+            north
+            (
+            #196
+            _sub
+              #196
+              _object
+                position
+              : Int
+              #196
+              _int
+                1
+              : Int
+            : Int
+            )
+          : String
+        : String
+      : String
+    #200
+    _method
+      northeast
+      #200
+      _formal
+        position
+        Int
+      String
+      #201
+      _cond
+        #201
+        _lt
+          #201
+          _sub
+            #201
+            _object
+              position
+            : Int
+            #201
+            _object
+              columns
+            : Int
+          : Int
+          #201
+          _int
+            0
+          : Int
+        : Bool
+        #202
+        _string
+          " "
+        : String
+        #203
+        _cond
+          #203
+          _eq
+            #203
+            _mul
+              #203
+              _divide
+                #203
+                _plus
+                  #203
+                  _object
+                    position
+                  : Int
+                  #203
+                  _int
+                    1
+                  : Int
+                : Int
+                #203
+                _object
+                  columns
+                : Int
+              : Int
+              #203
+              _object
+                columns
+              : Int
+            : Int
+            #203
+            _plus
+              #203
+              _object
+                position
+              : Int
+              #203
+              _int
+                1
+              : Int
+            : Int
+          : Bool
+          #204
+          _string
+            " "
+          : String
+          #206
+          _dispatch
+            #206
+            _object
+              self
+            : SELF_TYPE
+            north
+            (
+            #206
+            _plus
+              #206
+              _object
+                position
+              : Int
+              #206
+              _int
+                1
+              : Int
+            : Int
+            )
+          : String
+        : String
+      : String
+    #210
+    _method
+      southeast
+      #210
+      _formal
+        position
+        Int
+      String
+      #211
+      _cond
+        #211
+        _lt
+          #211
+          _object
+            board_size
+          : Int
+          #211
+          _plus
+            #211
+            _object
+              position
+            : Int
+            #211
+            _object
+              columns
+            : Int
+          : Int
+        : Bool
+        #212
+        _string
+          " "
+        : String
+        #213
+        _cond
+          #213
+          _eq
+            #213
+            _mul
+              #213
+              _divide
+                #213
+                _plus
+                  #213
+                  _object
+                    position
+                  : Int
+                  #213
+                  _int
+                    1
+                  : Int
+                : Int
+                #213
+                _object
+                  columns
+                : Int
+              : Int
+              #213
+              _object
+                columns
+              : Int
+            : Int
+            #213
+            _plus
+              #213
+              _object
+                position
+              : Int
+              #213
+              _int
+                1
+              : Int
+            : Int
+          : Bool
+          #214
+          _string
+            " "
+          : String
+          #216
+          _dispatch
+            #216
+            _object
+              self
+            : SELF_TYPE
+            south
+            (
+            #216
+            _plus
+              #216
+              _object
+                position
+              : Int
+              #216
+              _int
+                1
+              : Int
+            : Int
+            )
+          : String
+        : String
+      : String
+    #220
+    _method
+      southwest
+      #220
+      _formal
+        position
+        Int
+      String
+      #221
+      _cond
+        #221
+        _lt
+          #221
+          _object
+            board_size
+          : Int
+          #221
+          _plus
+            #221
+            _object
+              position
+            : Int
+            #221
+            _object
+              columns
+            : Int
+          : Int
+        : Bool
+        #222
+        _string
+          " "
+        : String
+        #223
+        _cond
+          #223
+          _eq
+            #223
+            _mul
+              #223
+              _divide
+                #223
+                _object
+                  position
+                : Int
+                #223
+                _object
+                  columns
+                : Int
+              : Int
+              #223
+              _object
+                columns
+              : Int
+            : Int
+            #223
+            _object
+              position
+            : Int
+          : Bool
+          #224
+          _string
+            " "
+          : String
+          #226
+          _dispatch
+            #226
+            _object
+              self
+            : SELF_TYPE
+            south
+            (
+            #226
+            _sub
+              #226
+              _object
+                position
+              : Int
+              #226
+              _int
+                1
+              : Int
+            : Int
+            )
+          : String
+        : String
+      : String
+    #230
+    _method
+      neighbors
+      #230
+      _formal
+        position
+        Int
+      Int
+      #231
+      _block
+        #239
+        _plus
+          #238
+          _plus
+            #237
+            _plus
+              #236
+              _plus
+                #235
+                _plus
+                  #234
+                  _plus
+                    #233
+                    _plus
+                      #232
+                      _cond
+                        #232
+                        _eq
+                          #232
+                          _dispatch
+                            #232
+                            _object
+                              self
+                            : SELF_TYPE
+                            north
+                            (
+                            #232
+                            _object
+                              position
+                            : Int
+                            )
+                          : String
+                          #232
+                          _string
+                            "X"
+                          : String
+                        : Bool
+                        #232
+                        _int
+                          1
+                        : Int
+                        #232
+                        _int
+                          0
+                        : Int
+                      : Int
+                      #233
+                      _cond
+                        #233
+                        _eq
+                          #233
+                          _dispatch
+                            #233
+                            _object
+                              self
+                            : SELF_TYPE
+                            south
+                            (
+                            #233
+                            _object
+                              position
+                            : Int
+                            )
+                          : String
+                          #233
+                          _string
+                            "X"
+                          : String
+                        : Bool
+                        #233
+                        _int
+                          1
+                        : Int
+                        #233
+                        _int
+                          0
+                        : Int
+                      : Int
+                    : Int
+                    #234
+                    _cond
+                      #234
+                      _eq
+                        #234
+                        _dispatch
+                          #234
+                          _object
+                            self
+                          : SELF_TYPE
+                          east
+                          (
+                          #234
+                          _object
+                            position
+                          : Int
+                          )
+                        : String
+                        #234
+                        _string
+                          "X"
+                        : String
+                      : Bool
+                      #234
+                      _int
+                        1
+                      : Int
+                      #234
+                      _int
+                        0
+                      : Int
+                    : Int
+                  : Int
+                  #235
+                  _cond
+                    #235
+                    _eq
+                      #235
+                      _dispatch
+                        #235
+                        _object
+                          self
+                        : SELF_TYPE
+                        west
+                        (
+                        #235
+                        _object
+                          position
+                        : Int
+                        )
+                      : String
+                      #235
+                      _string
+                        "X"
+                      : String
+                    : Bool
+                    #235
+                    _int
+                      1
+                    : Int
+                    #235
+                    _int
+                      0
+                    : Int
+                  : Int
+                : Int
+                #236
+                _cond
+                  #236
+                  _eq
+                    #236
+                    _dispatch
+                      #236
+                      _object
+                        self
+                      : SELF_TYPE
+                      northeast
+                      (
+                      #236
+                      _object
+                        position
+                      : Int
+                      )
+                    : String
+                    #236
+                    _string
+                      "X"
+                    : String
+                  : Bool
+                  #236
+                  _int
+                    1
+                  : Int
+                  #236
+                  _int
+                    0
+                  : Int
+                : Int
+              : Int
+              #237
+              _cond
+                #237
+                _eq
+                  #237
+                  _dispatch
+                    #237
+                    _object
+                      self
+                    : SELF_TYPE
+                    northwest
+                    (
+                    #237
+                    _object
+                      position
+                    : Int
+                    )
+                  : String
+                  #237
+                  _string
+                    "X"
+                  : String
+                : Bool
+                #237
+                _int
+                  1
+                : Int
+                #237
+                _int
+                  0
+                : Int
+              : Int
+            : Int
+            #238
+            _cond
+              #238
+              _eq
+                #238
+                _dispatch
+                  #238
+                  _object
+                    self
+                  : SELF_TYPE
+                  southeast
+                  (
+                  #238
+                  _object
+                    position
+                  : Int
+                  )
+                : String
+                #238
+                _string
+                  "X"
+                : String
+              : Bool
+              #238
+              _int
+                1
+              : Int
+              #238
+              _int
+                0
+              : Int
+            : Int
+          : Int
+          #239
+          _cond
+            #239
+            _eq
+              #239
+              _dispatch
+                #239
+                _object
+                  self
+                : SELF_TYPE
+                southwest
+                (
+                #239
+                _object
+                  position
+                : Int
+                )
+              : String
+              #239
+              _string
+                "X"
+              : String
+            : Bool
+            #239
+            _int
+              1
+            : Int
+            #239
+            _int
+              0
+            : Int
+          : Int
+        : Int
+      : Int
+    #247
+    _method
+      cell_at_next_evolution
+      #247
+      _formal
+        position
+        Int
+      String
+      #249
+      _cond
+        #249
+        _eq
+          #249
+          _dispatch
+            #249
+            _object
+              self
+            : SELF_TYPE
+            neighbors
+            (
+            #249
+            _object
+              position
+            : Int
+            )
+          : Int
+          #249
+          _int
+            3
+          : Int
+        : Bool
+        #250
+        _string
+          "X"
+        : String
+        #252
+        _cond
+          #252
+          _eq
+            #252
+            _dispatch
+              #252
+              _object
+                self
+              : SELF_TYPE
+              neighbors
+              (
+              #252
+              _object
+                position
+              : Int
+              )
+            : Int
+            #252
+            _int
+              2
+            : Int
+          : Bool
+          #253
+          _cond
+            #253
+            _eq
+              #253
+              _dispatch
+                #253
+                _object
+                  self
+                : SELF_TYPE
+                cell
+                (
+                #253
+                _object
+                  position
+                : Int
+                )
+              : String
+              #253
+              _string
+                "X"
+              : String
+            : Bool
+            #254
+            _string
+              "X"
+            : String
+            #256
+            _string
+              "-"
+            : String
+          : String
+          #259
+          _string
+            "-"
+          : String
+        : String
+      : String
+    #264
+    _method
+      evolve
+      SELF_TYPE
+      #265
+      _let
+        position
+        Int
+        #265
+        _int
+          0
+        : Int
+        #266
+        _let
+          num
+          Int
+          #266
+          _dispatch
+            #266
+            _object
+              self
+            : SELF_TYPE
+            num_cells
+            (
+            )
+          : Int
+          #267
+          _let
+            temp
+            String
+            #0
+            _no_expr
+            : _no_type
+            #268
+            _block
+              #269
+              _loop
+                #269
+                _lt
+                  #269
+                  _object
+                    position
+                  : Int
+                  #269
+                  _object
+                    num
+                  : Int
+                : Bool
+                #270
+                _block
+                  #271
+                  _assign
+                    temp
+                    #271
+                    _dispatch
+                      #271
+                      _object
+                        temp
+                      : String
+                      concat
+                      (
+                      #271
+                      _dispatch
+                        #271
+                        _object
+                          self
+                        : SELF_TYPE
+                        cell_at_next_evolution
+                        (
+                        #271
+                        _object
+                          position
+                        : Int
+                        )
+                      : String
+                      )
+                    : String
+                  : String
+                  #272
+                  _assign
+                    position
+                    #272
+                    _plus
+                      #272
+                      _object
+                        position
+                      : Int
+                      #272
+                      _int
+                        1
+                      : Int
+                    : Int
+                  : Int
+                : Int
+              : Object
+              #275
+              _assign
+                population_map
+                #275
+                _object
+                  temp
+                : String
+              : String
+              #276
+              _object
+                self
+              : SELF_TYPE
+            : SELF_TYPE
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    #284
+    _method
+      option
+      String
+      #285
+      _block
+        #286
+        _let
+          num
+          Int
+          #0
+          _no_expr
+          : _no_type
+          #287
+          _block
+            #288
+            _dispatch
+              #288
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #288
+              _string
+                "\nPlease chose a number:\n"
+              : String
+              )
+            : SELF_TYPE
+            #289
+            _dispatch
+              #289
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #289
+              _string
+                "\t1: A cross\n"
+              : String
+              )
+            : SELF_TYPE
+            #290
+            _dispatch
+              #290
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #290
+              _string
+                "\t2: A slash from the upper left to lower right\n"
+              : String
+              )
+            : SELF_TYPE
+            #291
+            _dispatch
+              #291
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #291
+              _string
+                "\t3: A slash from the upper right to lower left\n"
+              : String
+              )
+            : SELF_TYPE
+            #292
+            _dispatch
+              #292
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #292
+              _string
+                "\t4: An X\n"
+              : String
+              )
+            : SELF_TYPE
+            #293
+            _dispatch
+              #293
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #293
+              _string
+                "\t5: A greater than sign \n"
+              : String
+              )
+            : SELF_TYPE
+            #294
+            _dispatch
+              #294
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #294
+              _string
+                "\t6: A less than sign\n"
+              : String
+              )
+            : SELF_TYPE
+            #295
+            _dispatch
+              #295
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #295
+              _string
+                "\t7: Two greater than signs\n"
+              : String
+              )
+            : SELF_TYPE
+            #296
+            _dispatch
+              #296
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #296
+              _string
+                "\t8: Two less than signs\n"
+              : String
+              )
+            : SELF_TYPE
+            #297
+            _dispatch
+              #297
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #297
+              _string
+                "\t9: A 'V'\n"
+              : String
+              )
+            : SELF_TYPE
+            #298
+            _dispatch
+              #298
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #298
+              _string
+                "\t10: An inverse 'V'\n"
+              : String
+              )
+            : SELF_TYPE
+            #299
+            _dispatch
+              #299
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #299
+              _string
+                "\t11: Numbers 9 and 10 combined\n"
+              : String
+              )
+            : SELF_TYPE
+            #300
+            _dispatch
+              #300
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #300
+              _string
+                "\t12: A full grid\n"
+              : String
+              )
+            : SELF_TYPE
+            #301
+            _dispatch
+              #301
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #301
+              _string
+                "\t13: A 'T'\n"
+              : String
+              )
+            : SELF_TYPE
+            #302
+            _dispatch
+              #302
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #302
+              _string
+                "\t14: A plus '+'\n"
+              : String
+              )
+            : SELF_TYPE
+            #303
+            _dispatch
+              #303
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #303
+              _string
+                "\t15: A 'W'\n"
+              : String
+              )
+            : SELF_TYPE
+            #304
+            _dispatch
+              #304
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #304
+              _string
+                "\t16: An 'M'\n"
+              : String
+              )
+            : SELF_TYPE
+            #305
+            _dispatch
+              #305
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #305
+              _string
+                "\t17: An 'E'\n"
+              : String
+              )
+            : SELF_TYPE
+            #306
+            _dispatch
+              #306
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #306
+              _string
+                "\t18: A '3'\n"
+              : String
+              )
+            : SELF_TYPE
+            #307
+            _dispatch
+              #307
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #307
+              _string
+                "\t19: An 'O'\n"
+              : String
+              )
+            : SELF_TYPE
+            #308
+            _dispatch
+              #308
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #308
+              _string
+                "\t20: An '8'\n"
+              : String
+              )
+            : SELF_TYPE
+            #309
+            _dispatch
+              #309
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #309
+              _string
+                "\t21: An 'S'\n"
+              : String
+              )
+            : SELF_TYPE
+            #310
+            _dispatch
+              #310
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #310
+              _string
+                "Your choice => "
+              : String
+              )
+            : SELF_TYPE
+            #311
+            _assign
+              num
+              #311
+              _dispatch
+                #311
+                _object
+                  self
+                : SELF_TYPE
+                in_int
+                (
+                )
+              : Int
+            : Int
+            #312
+            _dispatch
+              #312
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #312
+              _string
+                "\n"
+              : String
+              )
+            : SELF_TYPE
+            #313
+            _cond
+              #313
+              _eq
+                #313
+                _object
+                  num
+                : Int
+                #313
+                _int
+                  1
+                : Int
+              : Bool
+              #314
+              _string
+                " XX  XXXX XXXX  XX  "
+              : String
+              #315
+              _cond
+                #315
+                _eq
+                  #315
+                  _object
+                    num
+                  : Int
+                  #315
+                  _int
+                    2
+                  : Int
+                : Bool
+                #316
+                _string
+                  "    X   X   X   X   X    "
+                : String
+                #317
+                _cond
+                  #317
+                  _eq
+                    #317
+                    _object
+                      num
+                    : Int
+                    #317
+                    _int
+                      3
+                    : Int
+                  : Bool
+                  #318
+                  _string
+                    "X     X     X     X     X"
+                  : String
+                  #319
+                  _cond
+                    #319
+                    _eq
+                      #319
+                      _object
+                        num
+                      : Int
+                      #319
+                      _int
+                        4
+                      : Int
+                    : Bool
+                    #320
+                    _string
+                      "X   X X X   X   X X X   X"
+                    : String
+                    #321
+                    _cond
+                      #321
+                      _eq
+                        #321
+                        _object
+                          num
+                        : Int
+                        #321
+                        _int
+                          5
+                        : Int
+                      : Bool
+                      #322
+                      _string
+                        "X     X     X   X   X    "
+                      : String
+                      #323
+                      _cond
+                        #323
+                        _eq
+                          #323
+                          _object
+                            num
+                          : Int
+                          #323
+                          _int
+                            6
+                          : Int
+                        : Bool
+                        #324
+                        _string
+                          "    X   X   X     X     X"
+                        : String
+                        #325
+                        _cond
+                          #325
+                          _eq
+                            #325
+                            _object
+                              num
+                            : Int
+                            #325
+                            _int
+                              7
+                            : Int
+                          : Bool
+                          #326
+                          _string
+                            "X  X  X  XX  X      "
+                          : String
+                          #327
+                          _cond
+                            #327
+                            _eq
+                              #327
+                              _object
+                                num
+                              : Int
+                              #327
+                              _int
+                                8
+                              : Int
+                            : Bool
+                            #328
+                            _string
+                              " X  XX  X  X  X     "
+                            : String
+                            #329
+                            _cond
+                              #329
+                              _eq
+                                #329
+                                _object
+                                  num
+                                : Int
+                                #329
+                                _int
+                                  9
+                                : Int
+                              : Bool
+                              #330
+                              _string
+                                "X   X X X   X  "
+                              : String
+                              #331
+                              _cond
+                                #331
+                                _eq
+                                  #331
+                                  _object
+                                    num
+                                  : Int
+                                  #331
+                                  _int
+                                    10
+                                  : Int
+                                : Bool
+                                #332
+                                _string
+                                  "  X   X X X   X"
+                                : String
+                                #333
+                                _cond
+                                  #333
+                                  _eq
+                                    #333
+                                    _object
+                                      num
+                                    : Int
+                                    #333
+                                    _int
+                                      11
+                                    : Int
+                                  : Bool
+                                  #334
+                                  _string
+                                    "X X X X X X X X"
+                                  : String
+                                  #335
+                                  _cond
+                                    #335
+                                    _eq
+                                      #335
+                                      _object
+                                        num
+                                      : Int
+                                      #335
+                                      _int
+                                        12
+                                      : Int
+                                    : Bool
+                                    #336
+                                    _string
+                                      "XXXXXXXXXXXXXXXXXXXXXXXXX"
+                                    : String
+                                    #337
+                                    _cond
+                                      #337
+                                      _eq
+                                        #337
+                                        _object
+                                          num
+                                        : Int
+                                        #337
+                                        _int
+                                          13
+                                        : Int
+                                      : Bool
+                                      #338
+                                      _string
+                                        "XXXXX  X    X    X    X  "
+                                      : String
+                                      #339
+                                      _cond
+                                        #339
+                                        _eq
+                                          #339
+                                          _object
+                                            num
+                                          : Int
+                                          #339
+                                          _int
+                                            14
+                                          : Int
+                                        : Bool
+                                        #340
+                                        _string
+                                          "  X    X  XXXXX  X    X  "
+                                        : String
+                                        #341
+                                        _cond
+                                          #341
+                                          _eq
+                                            #341
+                                            _object
+                                              num
+                                            : Int
+                                            #341
+                                            _int
+                                              15
+                                            : Int
+                                          : Bool
+                                          #342
+                                          _string
+                                            "X     X X X X   X X  "
+                                          : String
+                                          #343
+                                          _cond
+                                            #343
+                                            _eq
+                                              #343
+                                              _object
+                                                num
+                                              : Int
+                                              #343
+                                              _int
+                                                16
+                                              : Int
+                                            : Bool
+                                            #344
+                                            _string
+                                              "  X X   X X X X     X"
+                                            : String
+                                            #345
+                                            _cond
+                                              #345
+                                              _eq
+                                                #345
+                                                _object
+                                                  num
+                                                : Int
+                                                #345
+                                                _int
+                                                  17
+                                                : Int
+                                              : Bool
+                                              #346
+                                              _string
+                                                "XXXXX   X   XXXXX   X   XXXX"
+                                              : String
+                                              #347
+                                              _cond
+                                                #347
+                                                _eq
+                                                  #347
+                                                  _object
+                                                    num
+                                                  : Int
+                                                  #347
+                                                  _int
+                                                    18
+                                                  : Int
+                                                : Bool
+                                                #348
+                                                _string
+                                                  "XXX    X   X  X    X   XXXX "
+                                                : String
+                                                #349
+                                                _cond
+                                                  #349
+                                                  _eq
+                                                    #349
+                                                    _object
+                                                      num
+                                                    : Int
+                                                    #349
+                                                    _int
+                                                      19
+                                                    : Int
+                                                  : Bool
+                                                  #350
+                                                  _string
+                                                    " XX X  XX  X XX "
+                                                  : String
+                                                  #351
+                                                  _cond
+                                                    #351
+                                                    _eq
+                                                      #351
+                                                      _object
+                                                        num
+                                                      : Int
+                                                      #351
+                                                      _int
+                                                        20
+                                                      : Int
+                                                    : Bool
+                                                    #352
+                                                    _string
+                                                      " XX X  XX  X XX X  XX  X XX "
+                                                    : String
+                                                    #353
+                                                    _cond
+                                                      #353
+                                                      _eq
+                                                        #353
+                                                        _object
+                                                          num
+                                                        : Int
+                                                        #353
+                                                        _int
+                                                          21
+                                                        : Int
+                                                      : Bool
+                                                      #354
+                                                      _string
+                                                        " XXXX   X    XX    X   XXXX "
+                                                      : String
+                                                      #356
+                                                      _string
+                                                        "                         "
+                                                      : String
+                                                    : String
+                                                  : String
+                                                : String
+                                              : String
+                                            : String
+                                          : String
+                                        : String
+                                      : String
+                                    : String
+                                  : String
+                                : String
+                              : String
+                            : String
+                          : String
+                        : String
+                      : String
+                    : String
+                  : String
+                : String
+              : String
+            : String
+          : String
+        : String
+      : String
+    #366
+    _method
+      prompt
+      Bool
+      #367
+      _block
+        #368
+        _let
+          ans
+          String
+          #0
+          _no_expr
+          : _no_type
+          #369
+          _block
+            #370
+            _dispatch
+              #370
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #370
+              _string
+                "Would you like to continue with the next generation? \n"
+              : String
+              )
+            : SELF_TYPE
+            #371
+            _dispatch
+              #371
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #371
+              _string
+                "Please use lowercase y or n for your answer [y]: "
+              : String
+              )
+            : SELF_TYPE
+            #372
+            _assign
+              ans
+              #372
+              _dispatch
+                #372
+                _object
+                  self
+                : SELF_TYPE
+                in_string
+                (
+                )
+              : String
+            : String
+            #373
+            _dispatch
+              #373
+              _object
+                self
+              : SELF_TYPE
+              out_string
+              (
+              #373
+              _string
+                "\n"
+              : String
+              )
+            : SELF_TYPE
+            #374
+            _cond
+              #374
+              _eq
+                #374
+                _object
+                  ans
+                : String
+                #374
+                _string
+                  "n"
+                : String
+              : Bool
+              #375
+              _bool
+                0
+              : Bool
+              #377
+              _bool
+                1
+              : Bool
+            : Bool
+          : Bool
+        : Bool
+      : Bool
+    #385
+    _method
+      prompt2
+      Bool
+      #386
+      _let
+        ans
+        String
+        #0
+        _no_expr
+        : _no_type
+        #387
+        _block
+          #388
+          _dispatch
+            #388
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #388
+            _string
+              "\n\n"
+            : String
+            )
+          : SELF_TYPE
+          #389
+          _dispatch
+            #389
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #389
+            _string
+              "Would you like to choose a background pattern? \n"
+            : String
+            )
+          : SELF_TYPE
+          #390
+          _dispatch
+            #390
+            _object
+              self
+            : SELF_TYPE
+            out_string
+            (
+            #390
+            _string
+              "Please use lowercase y or n for your answer [n]: "
+            : String
+            )
+          : SELF_TYPE
+          #391
+          _assign
+            ans
+            #391
+            _dispatch
+              #391
+              _object
+                self
+              : SELF_TYPE
+              in_string
+              (
+              )
+            : String
+          : String
+          #392
+          _cond
+            #392
+            _eq
+              #392
+              _object
+                ans
+              : String
+              #392
+              _string
+                "y"
+              : String
+            : Bool
+            #393
+            _bool
+              1
+            : Bool
+            #395
+            _bool
+              0
+            : Bool
+          : Bool
+        : Bool
+      : Bool
+    )
+  #404
+  _class
+    Main
+    CellularAutomaton
+    "./tests/good/life.cl"
+    (
+    #405
+    _attr
+      cells
+      CellularAutomaton
+      #0
+      _no_expr
+      : _no_type
+    #407
+    _method
+      main
+      SELF_TYPE
+      #408
+      _block
+        #409
+        _let
+          continue
+          Bool
+          #0
+          _no_expr
+          : _no_type
+          #410
+          _let
+            choice
+            String
+            #0
+            _no_expr
+            : _no_type
+            #411
+            _block
+              #412
+              _dispatch
+                #412
+                _object
+                  self
+                : SELF_TYPE
+                out_string
+                (
+                #412
+                _string
+                  "Welcome to the Game of Life.\n"
+                : String
+                )
+              : SELF_TYPE
+              #413
+              _dispatch
+                #413
+                _object
+                  self
+                : SELF_TYPE
+                out_string
+                (
+                #413
+                _string
+                  "There are many initial states to choose from. \n"
+                : String
+                )
+              : SELF_TYPE
+              #414
+              _loop
+                #414
+                _dispatch
+                  #414
+                  _object
+                    self
+                  : SELF_TYPE
+                  prompt2
+                  (
+                  )
+                : Bool
+                #415
+                _block
+                  #416
+                  _assign
+                    continue
+                    #416
+                    _bool
+                      1
+                    : Bool
+                  : Bool
+                  #417
+                  _assign
+                    choice
+                    #417
+                    _dispatch
+                      #417
+                      _object
+                        self
+                      : SELF_TYPE
+                      option
+                      (
+                      )
+                    : String
+                  : String
+                  #418
+                  _assign
+                    cells
+                    #418
+                    _dispatch
+                      #418
+                      _new
+                        CellularAutomaton
+                      : CellularAutomaton
+                      init
+                      (
+                      #418
+                      _object
+                        choice
+                      : String
+                      )
+                    : CellularAutomaton
+                  : CellularAutomaton
+                  #419
+                  _dispatch
+                    #419
+                    _object
+                      cells
+                    : CellularAutomaton
+                    print
+                    (
+                    )
+                  : CellularAutomaton
+                  #420
+                  _loop
+                    #420
+                    _object
+                      continue
+                    : Bool
+                    #421
+                    _cond
+                      #421
+                      _dispatch
+                        #421
+                        _object
+                          self
+                        : SELF_TYPE
+                        prompt
+                        (
+                        )
+                      : Bool
+                      #422
+                      _block
+                        #423
+                        _dispatch
+                          #423
+                          _object
+                            cells
+                          : CellularAutomaton
+                          evolve
+                          (
+                          )
+                        : CellularAutomaton
+                        #424
+                        _dispatch
+                          #424
+                          _object
+                            cells
+                          : CellularAutomaton
+                          print
+                          (
+                          )
+                        : CellularAutomaton
+                      : CellularAutomaton
+                      #427
+                      _assign
+                        continue
+                        #427
+                        _bool
+                          0
+                        : Bool
+                      : Bool
+                    : Object
+                  : Object
+                : Object
+              : Object
+              #432
+              _object
+                self
+              : SELF_TYPE
+            : SELF_TYPE
+          : SELF_TYPE
+        : SELF_TYPE
+      : SELF_TYPE
+    )
